@@ -1,0 +1,118 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\cukar\\source\\repos\\Introduction\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4D2FBD36-4EB0-4DD5-90E1-8B17F06F88BF}|Introduction.WebAPI\\Introduction.WebAPI.csproj|c:\\users\\cukar\\source\\repos\\introduction\\introduction.webapi\\controllers\\dogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D2FBD36-4EB0-4DD5-90E1-8B17F06F88BF}|Introduction.WebAPI\\Introduction.WebAPI.csproj|solutionrelative:introduction.webapi\\controllers\\dogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D2FBD36-4EB0-4DD5-90E1-8B17F06F88BF}|Introduction.WebAPI\\Introduction.WebAPI.csproj|c:\\users\\cukar\\source\\repos\\introduction\\introduction.webapi\\dog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D2FBD36-4EB0-4DD5-90E1-8B17F06F88BF}|Introduction.WebAPI\\Introduction.WebAPI.csproj|solutionrelative:introduction.webapi\\dog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D2FBD36-4EB0-4DD5-90E1-8B17F06F88BF}|Introduction.WebAPI\\Introduction.WebAPI.csproj|c:\\users\\cukar\\source\\repos\\introduction\\introduction.webapi\\dogowner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D2FBD36-4EB0-4DD5-90E1-8B17F06F88BF}|Introduction.WebAPI\\Introduction.WebAPI.csproj|solutionrelative:introduction.webapi\\dogowner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D2FBD36-4EB0-4DD5-90E1-8B17F06F88BF}|Introduction.WebAPI\\Introduction.WebAPI.csproj|c:\\users\\cukar\\source\\repos\\introduction\\introduction.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D2FBD36-4EB0-4DD5-90E1-8B17F06F88BF}|Introduction.WebAPI\\Introduction.WebAPI.csproj|solutionrelative:introduction.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D2FBD36-4EB0-4DD5-90E1-8B17F06F88BF}|Introduction.WebAPI\\Introduction.WebAPI.csproj|c:\\users\\cukar\\source\\repos\\introduction\\introduction.webapi\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D2FBD36-4EB0-4DD5-90E1-8B17F06F88BF}|Introduction.WebAPI\\Introduction.WebAPI.csproj|solutionrelative:introduction.webapi\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D2FBD36-4EB0-4DD5-90E1-8B17F06F88BF}|Introduction.WebAPI\\Introduction.WebAPI.csproj|c:\\users\\cukar\\source\\repos\\introduction\\introduction.webapi\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D2FBD36-4EB0-4DD5-90E1-8B17F06F88BF}|Introduction.WebAPI\\Introduction.WebAPI.csproj|solutionrelative:introduction.webapi\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DogOwner.cs",
+              "DocumentMoniker": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.WebAPI\\DogOwner.cs",
+              "RelativeDocumentMoniker": "Introduction.WebAPI\\DogOwner.cs",
+              "ToolTip": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.WebAPI\\DogOwner.cs",
+              "RelativeToolTip": "Introduction.WebAPI\\DogOwner.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-05T08:15:01.783Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Dog.cs",
+              "DocumentMoniker": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.WebAPI\\Dog.cs",
+              "RelativeDocumentMoniker": "Introduction.WebAPI\\Dog.cs",
+              "ToolTip": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.WebAPI\\Dog.cs",
+              "RelativeToolTip": "Introduction.WebAPI\\Dog.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAxwA8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-03T08:38:18.398Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DogController.cs",
+              "DocumentMoniker": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.WebAPI\\Controllers\\DogController.cs",
+              "RelativeDocumentMoniker": "Introduction.WebAPI\\Controllers\\DogController.cs",
+              "ToolTip": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.WebAPI\\Controllers\\DogController.cs",
+              "RelativeToolTip": "Introduction.WebAPI\\Controllers\\DogController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-03T08:08:16.584Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.WebAPI\\Program.cs",
+              "RelativeDocumentMoniker": "Introduction.WebAPI\\Program.cs",
+              "ToolTip": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.WebAPI\\Program.cs",
+              "RelativeToolTip": "Introduction.WebAPI\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-03T08:37:04.096Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "WeatherForecastController.cs",
+              "DocumentMoniker": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.WebAPI\\Controllers\\WeatherForecastController.cs",
+              "RelativeDocumentMoniker": "Introduction.WebAPI\\Controllers\\WeatherForecastController.cs",
+              "ToolTip": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.WebAPI\\Controllers\\WeatherForecastController.cs",
+              "RelativeToolTip": "Introduction.WebAPI\\Controllers\\WeatherForecastController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAABIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-03T07:25:11.964Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "WeatherForecast.cs",
+              "DocumentMoniker": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.WebAPI\\WeatherForecast.cs",
+              "RelativeDocumentMoniker": "Introduction.WebAPI\\WeatherForecast.cs",
+              "ToolTip": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.WebAPI\\WeatherForecast.cs",
+              "RelativeToolTip": "Introduction.WebAPI\\WeatherForecast.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-03T07:00:56.644Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
