@@ -1,4 +1,4 @@
-﻿namespace Introduction.WebAPI
+﻿namespace Introduction.Model
 {
     public class DogOwner
     {

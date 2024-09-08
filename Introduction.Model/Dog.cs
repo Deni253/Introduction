@@ -1,8 +1,7 @@
-﻿namespace Introduction.WebAPI
+﻿namespace Introduction.Model
 {
     public class Dog
     {
-
         public Guid Id { get; set; }
         public Guid DogOwnerId { get; set; }
         public string? Name { get; set; }

@@ -8,6 +8,12 @@
     ".NETCoreApp,Version=v8.0": {
       "Introduction.WebAPI/1.0.0": {
         "dependencies": {
+          "Introduction.Common": "1.0.0",
+          "Introduction.Model": "1.0.0",
+          "Introduction.Repository": "1.0.0",
+          "Introduction.Repository.Common": "1.0.0",
+          "Introduction.Service": "1.0.0",
+          "Introduction.Service.Common": "1.0.0",
           "Npgsql": "8.0.3",
           "Swashbuckle.AspNetCore": "6.4.0"
         },
@@ -76,6 +82,73 @@
           "lib/net6.0/Swashbuckle.AspNetCore.SwaggerUI.dll": {
             "assemblyVersion": "6.4.0.0",
             "fileVersion": "6.4.0.0"
+          }
+        }
+      },
+      "Introduction.Common/1.0.0": {
+        "runtime": {
+          "Introduction.Common.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Introduction.Model/1.0.0": {
+        "dependencies": {
+          "Introduction.Common": "1.0.0"
+        },
+        "runtime": {
+          "Introduction.Model.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Introduction.Repository/1.0.0": {
+        "dependencies": {
+          "Introduction.Model": "1.0.0",
+          "Npgsql": "8.0.3"
+        },
+        "runtime": {
+          "Introduction.Repository.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Introduction.Repository.Common/1.0.0": {
+        "dependencies": {
+          "Introduction.Model": "1.0.0",
+          "Introduction.Service": "1.0.0"
+        },
+        "runtime": {
+          "Introduction.Repository.Common.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Introduction.Service/1.0.0": {
+        "dependencies": {
+          "Introduction.Model": "1.0.0",
+          "Introduction.Repository": "1.0.0",
+          "Introduction.Service.Common": "1.0.0"
+        },
+        "runtime": {
+          "Introduction.Service.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Introduction.Service.Common/1.0.0": {
+        "dependencies": {
+          "Introduction.Model": "1.0.0"
+        },
+        "runtime": {
+          "Introduction.Service.Common.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
           }
         }
       }
@@ -149,6 +222,36 @@
       "sha512": "sha512-1Hh3atb3pi8c+v7n4/3N80Jj8RvLOXgWxzix6w3OZhB7zBGRwsy7FWr4e3hwgPweSBpwfElqj4V4nkjYabH9nQ==",
       "path": "swashbuckle.aspnetcore.swaggerui/6.4.0",
       "hashPath": "swashbuckle.aspnetcore.swaggerui.6.4.0.nupkg.sha512"
+    },
+    "Introduction.Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Introduction.Model/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Introduction.Repository/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Introduction.Repository.Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Introduction.Service/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Introduction.Service.Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }
