@@ -31,3 +31,16 @@ C:\Users\cukar\source\repos\Introduction\Introduction.WebAPI\obj\Debug\net8.0\In
 C:\Users\cukar\source\repos\Introduction\Introduction.WebAPI\obj\Debug\net8.0\Introduction.WebAPI.genruntimeconfig.cache
 C:\Users\cukar\source\repos\Introduction\Introduction.WebAPI\obj\Debug\net8.0\ref\Introduction.WebAPI.dll
 C:\Users\cukar\source\repos\Introduction\Introduction.WebAPI\bin\Debug\net8.0\Npgsql.dll
+C:\Users\cukar\source\repos\Introduction\Introduction.WebAPI\obj\Debug\net8.0\Introduction.WebAPI.sourcelink.json
+C:\Users\cukar\source\repos\Introduction\Introduction.WebAPI\bin\Debug\net8.0\Introduction.Common.dll
+C:\Users\cukar\source\repos\Introduction\Introduction.WebAPI\bin\Debug\net8.0\Introduction.Model.dll
+C:\Users\cukar\source\repos\Introduction\Introduction.WebAPI\bin\Debug\net8.0\Introduction.Repository.Common.dll
+C:\Users\cukar\source\repos\Introduction\Introduction.WebAPI\bin\Debug\net8.0\Introduction.Repository.dll
+C:\Users\cukar\source\repos\Introduction\Introduction.WebAPI\bin\Debug\net8.0\Introduction.Service.Common.dll
+C:\Users\cukar\source\repos\Introduction\Introduction.WebAPI\bin\Debug\net8.0\Introduction.Service.dll
+C:\Users\cukar\source\repos\Introduction\Introduction.WebAPI\bin\Debug\net8.0\Introduction.Common.pdb
+C:\Users\cukar\source\repos\Introduction\Introduction.WebAPI\bin\Debug\net8.0\Introduction.Model.pdb
+C:\Users\cukar\source\repos\Introduction\Introduction.WebAPI\bin\Debug\net8.0\Introduction.Repository.Common.pdb
+C:\Users\cukar\source\repos\Introduction\Introduction.WebAPI\bin\Debug\net8.0\Introduction.Repository.pdb
+C:\Users\cukar\source\repos\Introduction\Introduction.WebAPI\bin\Debug\net8.0\Introduction.Service.Common.pdb
+C:\Users\cukar\source\repos\Introduction\Introduction.WebAPI\bin\Debug\net8.0\Introduction.Service.pdb

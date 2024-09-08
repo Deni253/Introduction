@@ -139,6 +139,85 @@
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
         ]
+      },
+      "Introduction.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/Introduction.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Introduction.Common.dll": {}
+        }
+      },
+      "Introduction.Model/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Introduction.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Introduction.Model.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Introduction.Model.dll": {}
+        }
+      },
+      "Introduction.Repository/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Introduction.Model": "1.0.0",
+          "Npgsql": "8.0.3"
+        },
+        "compile": {
+          "bin/placeholder/Introduction.Repository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Introduction.Repository.dll": {}
+        }
+      },
+      "Introduction.Repository.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Introduction.Model": "1.0.0",
+          "Introduction.Service": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Introduction.Repository.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Introduction.Repository.Common.dll": {}
+        }
+      },
+      "Introduction.Service/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Introduction.Model": "1.0.0",
+          "Introduction.Repository": "1.0.0",
+          "Introduction.Service.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Introduction.Service.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Introduction.Service.dll": {}
+        }
+      },
+      "Introduction.Service.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Introduction.Model": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Introduction.Service.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Introduction.Service.Common.dll": {}
+        }
       }
     }
   },
@@ -599,10 +678,46 @@
         "swashbuckle.aspnetcore.swaggerui.6.4.0.nupkg.sha512",
         "swashbuckle.aspnetcore.swaggerui.nuspec"
       ]
+    },
+    "Introduction.Common/1.0.0": {
+      "type": "project",
+      "path": "../Introduction.Common/Introduction.Common.csproj",
+      "msbuildProject": "../Introduction.Common/Introduction.Common.csproj"
+    },
+    "Introduction.Model/1.0.0": {
+      "type": "project",
+      "path": "../Introduction.Model/Introduction.Model.csproj",
+      "msbuildProject": "../Introduction.Model/Introduction.Model.csproj"
+    },
+    "Introduction.Repository/1.0.0": {
+      "type": "project",
+      "path": "../Introduction.Repository/Introduction.Repository.csproj",
+      "msbuildProject": "../Introduction.Repository/Introduction.Repository.csproj"
+    },
+    "Introduction.Repository.Common/1.0.0": {
+      "type": "project",
+      "path": "../Introduction.Repository.Common/Introduction.Repository.Common.csproj",
+      "msbuildProject": "../Introduction.Repository.Common/Introduction.Repository.Common.csproj"
+    },
+    "Introduction.Service/1.0.0": {
+      "type": "project",
+      "path": "../Introduction.Service/Introduction.Service.csproj",
+      "msbuildProject": "../Introduction.Service/Introduction.Service.csproj"
+    },
+    "Introduction.Service.Common/1.0.0": {
+      "type": "project",
+      "path": "../Introduction.Service.Common/Introduction.Service.Common.csproj",
+      "msbuildProject": "../Introduction.Service.Common/Introduction.Service.Common.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "Introduction.Common >= 1.0.0",
+      "Introduction.Model >= 1.0.0",
+      "Introduction.Repository >= 1.0.0",
+      "Introduction.Repository.Common >= 1.0.0",
+      "Introduction.Service >= 1.0.0",
+      "Introduction.Service.Common >= 1.0.0",
       "Npgsql >= 8.0.3",
       "Swashbuckle.AspNetCore >= 6.4.0"
     ]
@@ -639,7 +754,26 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.Common\\Introduction.Common.csproj": {
+              "projectPath": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.Common\\Introduction.Common.csproj"
+            },
+            "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.Model\\Introduction.Model.csproj": {
+              "projectPath": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.Model\\Introduction.Model.csproj"
+            },
+            "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.Repository.Common\\Introduction.Repository.Common.csproj": {
+              "projectPath": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.Repository.Common\\Introduction.Repository.Common.csproj"
+            },
+            "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.Repository\\Introduction.Repository.csproj": {
+              "projectPath": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.Repository\\Introduction.Repository.csproj"
+            },
+            "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.Service.Common\\Introduction.Service.Common.csproj": {
+              "projectPath": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.Service.Common\\Introduction.Service.Common.csproj"
+            },
+            "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.Service\\Introduction.Service.csproj": {
+              "projectPath": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.Service\\Introduction.Service.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

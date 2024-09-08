@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace Introduction.WebAPI.Controllers
+namespace Repository.Controllers
 {
     [ApiController]
     [Route("[controller]")]
@@ -19,7 +19,7 @@ namespace Introduction.WebAPI.Controllers
         }
 
         [HttpGet(Name = "GetWeatherForecast")]
-        public IEnumerable<WeatherForecast> Get()// ovdje unutar get možemo (DateOnly? date=null,string summary="")
+        public IEnumerable<WeatherForecast> Get()
         {
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
@@ -28,19 +28,6 @@ namespace Introduction.WebAPI.Controllers
                 Summary = Summaries[Random.Shared.Next(Summaries.Length)]
             })
             .ToArray();
-        }
-
-        [HttpGet]
-        [Route("{id}")] //definiramo rutu
-        public string GetWeatherForecast(int id)
-        {
-            return "Cool";
-        }
-
-        [HttpPost]
-        public bool InsertWeatherSummary(WeatherForecast forecast)
-        {
-            return true;
         }
     }
 }
