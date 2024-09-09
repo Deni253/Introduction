@@ -1,15 +1,14 @@
 ﻿using Introduction.Model;
+using Introduction.Repository.Common;
 using Npgsql;
-//using Introduction.Repository.Common;
-
 
 namespace Introduction.Repository
 {
-    public class DogOwnerRepository //: IDogOwnerRepository ne radi (sve crud metode rade osim što ovo nisam uspio naslijediti)
+    public class DogOwnerRepository: IDogOwnerRepository //ne radi (sve crud metode rade osim što ovo nisam uspio naslijediti)
     {
         private string connectionString = "Host=localhost;Port=5432;Database=postgres;Username=postgres;Password=postgres";
         
-            public bool Delete(Guid id)
+            public async Task<bool> Delete(Guid id)
             {
             try
             {
@@ -21,9 +20,9 @@ namespace Introduction.Repository
 
                     command.Parameters.AddWithValue("@id", id);
 
-                    connection.Open();
+                    connection.Open();//ne staviti kao asinkrono jer onda nećemo bit sigurni jel ona otvorena prije nego ostalo krenemo radit a treba nam
 
-                    var numberOfCommits = command.ExecuteNonQuery();
+                    var numberOfCommits = await command.ExecuteNonQueryAsync();
 
                     connection.Close();
 
@@ -39,7 +38,7 @@ namespace Introduction.Repository
                 }
             }
 
-        public bool Post(DogOwner dogOwner)
+        public async Task<bool> Post(DogOwner dogOwner)
         {
             try
             {
@@ -48,7 +47,7 @@ namespace Introduction.Repository
                 var commandText = "INSERT INTO \"DogOwner\"VALUES(@Id,@FirstName,@LastName,@PhoneNumber,@Email);";
 
                 using var command = new NpgsqlCommand(commandText, connection);
-
+                
                 command.Parameters.AddWithValue("@id", Guid.NewGuid());
                 command.Parameters.AddWithValue("@FirstName", dogOwner.FirstName);
                 command.Parameters.AddWithValue("@LastName", dogOwner.LastName);
@@ -56,23 +55,23 @@ namespace Introduction.Repository
                 command.Parameters.AddWithValue("@Email", dogOwner.Email);
 
                 connection.Open();
-
-                var numberOfCommits = command.ExecuteNonQuery();
-
+                
+                var numberOfCommits = await command.ExecuteNonQueryAsync(); // promijenimo korištenje metode
+                                                                            
                 connection.Close();
-
+                //awaitanje Taska će vratit int 
                 if (numberOfCommits == 0)
                 {
                     return false;
                 }
                 return true;
             }
-            catch (NpgsqlException)
+            catch (NpgsqlException ex)
             {
-                return false;
+                return false ;
             }
         }
-        public DogOwner Get(Guid id)
+        public async Task<DogOwner> Get(Guid id)
         {
             try
             {
@@ -85,7 +84,8 @@ namespace Introduction.Repository
 
                 command.Parameters.AddWithValue("@Id", id);
                 connection.Open();
-                using NpgsqlDataReader reader = command.ExecuteReader();
+
+                using NpgsqlDataReader reader =await command.ExecuteReaderAsync();
 
                 if (reader.HasRows)
                 {
@@ -108,7 +108,7 @@ namespace Introduction.Repository
                 return null;
             }
         }
-        public bool Update(Guid id,DogOwner dogOwner)
+        public async Task<bool> Update(Guid id,DogOwner dogOwner)
         {
             try
             {
@@ -124,7 +124,7 @@ namespace Introduction.Repository
 
                 connection.Open();
 
-                var numberOfCommits = command.ExecuteNonQuery();
+                var numberOfCommits = await command.ExecuteNonQueryAsync();
 
                 connection.Close();
 

@@ -4,9 +4,9 @@ namespace Introduction.Service.Common
 {
     public interface IDogService
     {
-        bool DeleteDog(Guid id);
-        bool PostDog(Dog dog);
-        Dog GetDog(Guid id);
-        bool UpdateDog(Guid id);
+        Task<bool> DeleteDog(Guid id);
+        Task<bool> PostDog(Dog dog);
+        Task<Dog> GetDog(Guid id);
+        Task<bool> UpdateDog(Guid id);
     }
 }

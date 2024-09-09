@@ -6,26 +6,26 @@ namespace Introduction.Service
 {
     public class DogService:IDogService
     {
-        public bool PostDog(Dog dog)
+        public async Task<bool> PostDog(Dog dog)
         {
             DogRepository repository = new DogRepository();
-            return repository.Post(dog);
+            return await repository.Post(dog);
         }
-        public bool DeleteDog(Guid id)
+        public async Task<bool> DeleteDog(Guid id)
         {
             DogRepository repository = new DogRepository();
-            return repository.Delete(id);
+            return await repository.Delete(id);
         }
-        public Dog GetDog(Guid id)
+        public async Task<Dog> GetDog(Guid id)
         {
             DogRepository repository = new DogRepository();
-            return repository.Get(id);
+            return await repository.Get(id);
         }
 
-        public bool UpdateDog(Guid id)
+        public async Task<bool> UpdateDog(Guid id)
         {
             DogRepository repository = new DogRepository();
-            return repository.Update(id);
+            return await repository.Update(id);
         }
     }
 }

@@ -1,16 +1,17 @@
 ﻿using Introduction.Common;
 using Introduction.Model;
+using Introduction.Repository.Common;
 using Npgsql;
 //using Introduction.Repository.Common;
 
 
 namespace Introduction.Repository
 {
-    public class DogRepository//:IDogRepository ne radi (sve crud metode rade osim što ovo nisam uspio naslijediti)
+    public class DogRepository:IDogRepository //ne radi (sve crud metode rade osim što ovo nisam uspio naslijediti)
     {
         private string connectionString = "Host=localhost;Port=5432;Database=postgres;Username=postgres;Password=postgres";
 
-        public bool Delete(Guid id)
+        public async Task<bool> Delete(Guid id)
         {
             try
             {
@@ -25,7 +26,7 @@ namespace Introduction.Repository
 
                 connection.Open();
 
-                var numberofcommits = command.ExecuteNonQuery();
+                var numberofcommits = await command.ExecuteNonQueryAsync();
 
                 connection.Close();
 
@@ -40,7 +41,7 @@ namespace Introduction.Repository
             }
         }
 
-        public bool Post(Dog dog)
+        public async Task<bool> Post(Dog dog)
         {
             try
             {
@@ -61,7 +62,7 @@ namespace Introduction.Repository
 
                 connection.Open();
 
-                var numberofcommits = command.ExecuteNonQuery();
+                var numberofcommits = await command.ExecuteNonQueryAsync();
 
                 connection.Close();
 
@@ -76,7 +77,7 @@ namespace Introduction.Repository
                 return false;
             }
         }
-        public Dog Get(Guid id)
+        public async Task<Dog> Get(Guid id)
         {
             try
             {
@@ -87,7 +88,7 @@ namespace Introduction.Repository
 
                 command.Parameters.AddWithValue("@id", id);
                 connection.Open();
-                using NpgsqlDataReader reader = command.ExecuteReader();
+                using NpgsqlDataReader reader = await command.ExecuteReaderAsync();
 
                 if (reader.HasRows)
                 {
@@ -112,7 +113,7 @@ namespace Introduction.Repository
                 return null;
             }
         }
-        public bool Update(Guid id)
+        public async Task<bool> Update(Guid id)
         {
             try
             {
@@ -129,7 +130,7 @@ namespace Introduction.Repository
 
                 connection.Open();
 
-                var numberofcommits = command.ExecuteNonQuery();
+                var numberofcommits = await command.ExecuteNonQueryAsync();
 
                 connection.Close();
 

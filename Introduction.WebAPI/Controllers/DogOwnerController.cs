@@ -14,10 +14,10 @@ namespace Introduction.Repository.Controllers
 
         [HttpPost]
         [Route("create")]
-        public IActionResult PostDogOwner(DogOwner dogOwner)
+        public async Task<IActionResult> PostDogOwner(DogOwner dogOwner)
         {
             DogOwnerService service = new DogOwnerService();
-            var isSuccessful = service.PostDogOwner(dogOwner);
+            var isSuccessful = await service.PostDogOwner(dogOwner);
             if (isSuccessful == false)
             {
                 return BadRequest();
@@ -30,10 +30,10 @@ namespace Introduction.Repository.Controllers
 
         [HttpDelete]
         [Route("del/{id}")]
-        public IActionResult DeleteDogOwner(Guid id)
+        public async Task<IActionResult> DeleteDogOwner(Guid id)
         {
             DogOwnerService service = new DogOwnerService();
-            var isSuccessful = service.DeleteDogOwner(id);
+            var isSuccessful = await service.DeleteDogOwner(id);
             if (isSuccessful == false)
             {
                 return BadRequest();
@@ -46,10 +46,10 @@ namespace Introduction.Repository.Controllers
 
         [HttpGet]
         [Route("get/{id}")]
-        public IActionResult GetDogOwner(Guid id)
+        public async Task<IActionResult> GetDogOwner(Guid id)
         {
             DogOwnerService service = new DogOwnerService();
-            var isSuccessful = service.GetDogOwner(id);//isSuccessful je ovdje objekt za razliku od ovih ostalih gdje je bool
+            var isSuccessful = await service.GetDogOwner(id);//isSuccessful je ovdje objekt za razliku od ovih ostalih gdje je bool
             if (isSuccessful == null)
             {
                 return BadRequest();
@@ -63,10 +63,10 @@ namespace Introduction.Repository.Controllers
 
         [HttpPut]
         [Route("update/{id}")]
-        public IActionResult UpdateDogOwner(Guid id,DogOwner dogOwner)
+        public async Task<IActionResult> UpdateDogOwner(Guid id,DogOwner dogOwner)
         {
             DogOwnerService service = new DogOwnerService();
-            var isSuccessful = service.UpdateDogOwner(id,dogOwner);
+            bool isSuccessful = await service.UpdateDogOwner(id,dogOwner);
             if (isSuccessful == false)
             {
                 return BadRequest();

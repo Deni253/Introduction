@@ -11,10 +11,10 @@ namespace Introduction.Repository.Controllers
     {
         [HttpPost]
         [Route("create")]
-        public IActionResult PostDog(Dog dog)
+        public async Task<IActionResult> PostDog(Dog dog)
         {
             DogService service = new DogService();
-            var isSuccessful = service.PostDog(dog);
+            var isSuccessful = await service.PostDog(dog);
             if (isSuccessful == false)
             {
                 return BadRequest();
@@ -27,10 +27,10 @@ namespace Introduction.Repository.Controllers
 
         [HttpDelete]
         [Route("del/{id}")]
-        public IActionResult DeleteDog(Guid id)
+        public async Task<IActionResult> DeleteDog(Guid id)
         {
             DogService service = new DogService();
-            var isSuccessful = service.DeleteDog(id);
+            var isSuccessful = await service.DeleteDog(id);
             if (isSuccessful == false)
             {
                 return BadRequest();
@@ -43,10 +43,10 @@ namespace Introduction.Repository.Controllers
 
         [HttpGet]
         [Route("get/{id}")]
-        public IActionResult GetDog(Guid id)
+        public async Task<IActionResult> GetDog(Guid id)
         {
             DogService service = new DogService();
-            var isSuccessful = service.GetDog(id);//isSuccessful je ovdje objekt za razliku od ovih ostalih gdje je bool
+            var isSuccessful =  await service.GetDog(id);//isSuccessful je ovdje objekt za razliku od ovih ostalih gdje je bool
             if (isSuccessful == null)
             {
                 return BadRequest();
@@ -60,10 +60,10 @@ namespace Introduction.Repository.Controllers
 
         [HttpPut]
         [Route("update/{id}")]
-        public IActionResult UpdateDog(Guid id)
+        public async Task<IActionResult> UpdateDog(Guid id)
         {
             DogService service = new DogService();
-            var isSuccessful = service.UpdateDog(id);
+            var isSuccessful = await service.UpdateDog(id);
             if (isSuccessful == false)
             {
                 return BadRequest();

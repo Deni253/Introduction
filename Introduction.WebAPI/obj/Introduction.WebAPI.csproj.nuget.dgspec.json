@@ -169,9 +169,6 @@
             "projectReferences": {
               "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.Model\\Introduction.Model.csproj": {
                 "projectPath": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.Model\\Introduction.Model.csproj"
-              },
-              "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.Service\\Introduction.Service.csproj": {
-                "projectPath": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.Service\\Introduction.Service.csproj"
               }
             }
           }
@@ -241,6 +238,9 @@
             "projectReferences": {
               "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.Model\\Introduction.Model.csproj": {
                 "projectPath": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.Model\\Introduction.Model.csproj"
+              },
+              "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.Repository.Common\\Introduction.Repository.Common.csproj": {
+                "projectPath": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.Repository.Common\\Introduction.Repository.Common.csproj"
               }
             }
           }

@@ -4,9 +4,9 @@ namespace Introduction.Repository.Common
 {
     public interface IDogRepository
     {
-        bool Post(Dog owner);
-        bool Delete(Guid id);
-        bool Update(Dog owner);
-        DogOwner Get(Guid id);
+        Task<bool> Post(Dog dog);
+        Task<bool> Delete(Guid id);
+        Task<bool> Update(Guid id);
+        Task<Dog> Get(Guid id);
     }
 }

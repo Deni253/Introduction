@@ -107,6 +107,7 @@
       "Introduction.Repository/1.0.0": {
         "dependencies": {
           "Introduction.Model": "1.0.0",
+          "Introduction.Repository.Common": "1.0.0",
           "Npgsql": "8.0.3"
         },
         "runtime": {
@@ -118,8 +119,7 @@
       },
       "Introduction.Repository.Common/1.0.0": {
         "dependencies": {
-          "Introduction.Model": "1.0.0",
-          "Introduction.Service": "1.0.0"
+          "Introduction.Model": "1.0.0"
         },
         "runtime": {
           "Introduction.Repository.Common.dll": {
