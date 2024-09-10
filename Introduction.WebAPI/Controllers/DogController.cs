@@ -65,10 +65,10 @@ namespace Introduction.Repository.Controllers
         }
 
         [HttpGet]
-        [Route("getall/{id}")]
-        public async Task<IActionResult> GetAll(Guid id)
+        [Route("getall")]
+        public async Task<IActionResult> GetAll()
         {
-            var isSuccessful = await _service.GetAll(id);//isSuccessful je ovdje objekt za razliku od ovih ostalih gdje je bool
+            var isSuccessful = await _service.GetAll();//isSuccessful je ovdje objekt za razliku od ovih ostalih gdje je bool
             if (isSuccessful == null)
             {
                 return BadRequest();

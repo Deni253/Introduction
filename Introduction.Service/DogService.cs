@@ -27,9 +27,9 @@ namespace Introduction.Service
             return await _repository.Get(id);
         }
 
-        public async Task<Dog> GetAll(Guid id)
+        public async Task<List<Dog>> GetAll()
         {
-            return await _repository.GetAll(id);
+            return await _repository.GetAll();
         }
 
         public async Task<bool> UpdateDog(Guid id)

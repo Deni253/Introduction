@@ -8,7 +8,7 @@ namespace Introduction.Service.Common
         Task<bool> PostDog(Dog dog);
         Task<Dog> GetDog(Guid id);
 
-        Task<Dog> GetAll(Guid id);
+        Task<List<Dog>> GetAll();
         Task<bool> UpdateDog(Guid id);
     }
 }

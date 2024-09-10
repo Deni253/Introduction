@@ -50,17 +50,11 @@
   {
     "ContainingType": "Introduction.Repository.Controllers.DogController",
     "Method": "GetAll",
-    "RelativePath": "Dog/getall/{id}",
+    "RelativePath": "Dog/getall",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Guid",
-        "IsRequired": true
-      }
-    ],
+    "Parameters": [],
     "ReturnTypes": []
   },
   {
