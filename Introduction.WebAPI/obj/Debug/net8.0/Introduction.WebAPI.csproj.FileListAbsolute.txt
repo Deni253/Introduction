@@ -89,3 +89,6 @@ C:\Users\cukar\Desktop\MULTILAYER\Introduction-main\Introduction.WebAPI\obj\Debu
 C:\Users\cukar\Desktop\MULTILAYER\Introduction-main\Introduction.WebAPI\obj\Debug\net8.0\Introduction.WebAPI.pdb
 C:\Users\cukar\Desktop\MULTILAYER\Introduction-main\Introduction.WebAPI\obj\Debug\net8.0\Introduction.WebAPI.genruntimeconfig.cache
 C:\Users\cukar\Desktop\MULTILAYER\Introduction-main\Introduction.WebAPI\obj\Debug\net8.0\ref\Introduction.WebAPI.dll
+C:\Users\cukar\source\repos\Introduction\Introduction.WebAPI\bin\Debug\net8.0\Autofac.dll
+C:\Users\cukar\source\repos\Introduction\Introduction.WebAPI\bin\Debug\net8.0\Autofac.Extensions.DependencyInjection.dll
+C:\Users\cukar\source\repos\Introduction\Introduction.WebAPI\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll

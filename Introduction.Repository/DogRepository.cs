@@ -113,6 +113,45 @@ namespace Introduction.Repository
                 return null;
             }
         }
+        public async Task<Dog> GetAll(Guid id)
+        {
+            try
+            {
+                var dog = new Dog();
+                var dogOwner = new DogOwner();
+                using var connection = new NpgsqlConnection(connectionString);
+                var commandText = "SELECT * FROM \"Dog\" FULL OUTER JOIN \"DogOwner\"ON\"Dog.DogOwnerID\"DogOwner.Id;";
+                using var command = new NpgsqlCommand(commandText, connection);
+
+                command.Parameters.AddWithValue("@id", id);
+                connection.Open();
+                using NpgsqlDataReader reader = await command.ExecuteReaderAsync();
+
+                if (reader.HasRows)
+                {
+                   
+                    reader.Read();
+
+                    dog.Id = Guid.Parse(reader[0].ToString());
+                    dog.DogOwnerId = Guid.Parse(reader[1].ToString());
+                    dog.Name = reader[2].ToString();
+                    dog.BirthDate = Convert.ToDateTime(reader[3]);
+                    dog.Age = Convert.ToInt32(reader[4]);
+                    dog.FurColor = reader[5].ToString();
+                    dog.Breed = reader[6].ToString();
+                    dog.IsTrained = Convert.ToBoolean(reader[7]);
+                    dogOwner.FirstName= reader[8].ToString();
+                    dogOwner.LastName= reader[9].ToString();
+                    dogOwner.PhoneNumber= reader[10].ToString();
+                    dogOwner.Email= reader[11].ToString();
+                }
+                return dog;
+            }
+            catch (NpgsqlException)
+            {
+                return null;
+            }
+        }
         public async Task<bool> Update(Guid id)
         {
             try

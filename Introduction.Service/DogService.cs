@@ -1,31 +1,41 @@
 ﻿using Introduction.Model;
 using Introduction.Repository;
+using Introduction.Repository.Common;
 using Introduction.Service.Common;
 
 namespace Introduction.Service
 {
     public class DogService:IDogService
     {
-        public async Task<bool> PostDog(Dog dog)
+        private IDogRepository _repository;
+        public DogService(IDogRepository repository)
         {
-            DogRepository repository = new DogRepository();
-            return await repository.Post(dog);
+            _repository = repository;
+        }
+
+        public async Task<bool> PostDog(Dog dog)
+        {            
+            return await _repository.Post(dog);
         }
         public async Task<bool> DeleteDog(Guid id)
         {
-            DogRepository repository = new DogRepository();
-            return await repository.Delete(id);
+            
+            return await _repository.Delete(id);
         }
         public async Task<Dog> GetDog(Guid id)
+        {           
+            return await _repository.Get(id);
+        }
+
+        public async Task<Dog> GetAll(Guid id)
         {
-            DogRepository repository = new DogRepository();
-            return await repository.Get(id);
+            return await _repository.GetAll(id);
         }
 
         public async Task<bool> UpdateDog(Guid id)
         {
-            DogRepository repository = new DogRepository();
-            return await repository.Update(id);
+            
+            return await _repository.Update(id);
         }
     }
 }

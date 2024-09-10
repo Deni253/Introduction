@@ -1,5 +1,6 @@
 ﻿using Introduction.Model;
 using Introduction.Service;
+using Introduction.Service.Common;
 using Microsoft.AspNetCore.Mvc;
 using Npgsql;
 
@@ -10,14 +11,18 @@ namespace Introduction.Repository.Controllers
     [Route("[controller]")]
     public class DogOwnerController : ControllerBase
     {
-        
+        private IDogOwnerService _service;
+
+        public DogOwnerController(IDogOwnerService service)
+        {
+            _service = service;
+        }
 
         [HttpPost]
         [Route("create")]
         public async Task<IActionResult> PostDogOwner(DogOwner dogOwner)
         {
-            DogOwnerService service = new DogOwnerService();
-            var isSuccessful = await service.PostDogOwner(dogOwner);
+            var isSuccessful = await _service.PostDogOwner(dogOwner);
             if (isSuccessful == false)
             {
                 return BadRequest();
@@ -32,8 +37,7 @@ namespace Introduction.Repository.Controllers
         [Route("del/{id}")]
         public async Task<IActionResult> DeleteDogOwner(Guid id)
         {
-            DogOwnerService service = new DogOwnerService();
-            var isSuccessful = await service.DeleteDogOwner(id);
+            var isSuccessful = await _service.DeleteDogOwner(id);
             if (isSuccessful == false)
             {
                 return BadRequest();
@@ -48,8 +52,7 @@ namespace Introduction.Repository.Controllers
         [Route("get/{id}")]
         public async Task<IActionResult> GetDogOwner(Guid id)
         {
-            DogOwnerService service = new DogOwnerService();
-            var isSuccessful = await service.GetDogOwner(id);//isSuccessful je ovdje objekt za razliku od ovih ostalih gdje je bool
+            var isSuccessful = await _service.GetDogOwner(id);//isSuccessful je ovdje objekt za razliku od ovih ostalih gdje je bool
             if (isSuccessful == null)
             {
                 return BadRequest();
@@ -60,13 +63,14 @@ namespace Introduction.Repository.Controllers
             }
         }
 
+        
+
 
         [HttpPut]
         [Route("update/{id}")]
         public async Task<IActionResult> UpdateDogOwner(Guid id,DogOwner dogOwner)
         {
-            DogOwnerService service = new DogOwnerService();
-            bool isSuccessful = await service.UpdateDogOwner(id,dogOwner);
+            bool isSuccessful = await _service.UpdateDogOwner(id,dogOwner);
             if (isSuccessful == false)
             {
                 return BadRequest();

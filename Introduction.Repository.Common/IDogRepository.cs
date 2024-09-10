@@ -8,5 +8,6 @@ namespace Introduction.Repository.Common
         Task<bool> Delete(Guid id);
         Task<bool> Update(Guid id);
         Task<Dog> Get(Guid id);
+        Task<Dog> GetAll(Guid id);
     }
 }
