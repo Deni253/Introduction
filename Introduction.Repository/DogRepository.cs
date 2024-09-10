@@ -117,18 +117,18 @@ namespace Introduction.Repository
         {
             try
             {
-                List<Dog> dogs = new List<Dog>();
-               
+                List<Dog> dogs = new List<Dog>();     
                 using var connection = new NpgsqlConnection(connectionString);
-                var commandText = "SELECT * FROM \"Dog;";
-                //var commandText = "SELECT * FROM \"Dog\" FULL\" OUTER \"JOIN \"DogOwner\"ON\"Dog.DogOwnerID\"=DogOwner.Id;";
+                var commandText = "SELECT * FROM \"Dog\";";
+                //var commandText = "SELECT * FROM \"Dog\" FULL OUTER JOIN \"DogOwner\"ON\"Dog.DogOwnerID\"=DogOwner.Id;";
                 using var command = new NpgsqlCommand(commandText, connection);
 
                 //command.Parameters.AddWithValue("@id", id);
                 connection.Open();
                 using NpgsqlDataReader reader = await command.ExecuteReaderAsync();
 
-                
+                if (reader.HasRows)
+                {
                     while (reader.Read())
                     {
                         Dog dog = new()
@@ -145,8 +145,7 @@ namespace Introduction.Repository
                     
                         dogs.Add(dog);
                     }
-                
- 
+                }
                 return dogs;
             }
 
