@@ -10,17 +10,17 @@ namespace Introduction.Repository
     {
         private string connectionString = "Host=localhost;Port=5432;Database=postgres;Username=postgres;Password=postgres";
 
-        public async Task<bool> Delete(DogOwnerFilter ownerFilter)
+        public async Task<bool> Delete(Guid id)
         {
             try
             {
                 using var connection = new NpgsqlConnection(connectionString);
 
-                var commandText = "DELETE FROM \"DogOwner\"WHERE\"FirstName\"=@firstName;";
+                var commandText = "DELETE FROM \"Dog\"WHERE\"Id\"=@Id;";
 
                 using var command = new NpgsqlCommand(commandText, connection);
 
-                command.Parameters.AddWithValue("@firstName", $"{ownerFilter.FirstName}");
+                command.Parameters.AddWithValue("@id", id);
 
                 connection.Open();//ne staviti kao asinkrono jer onda nećemo bit sigurni jel ona otvorena prije nego ostalo krenemo radit a treba nam
 
@@ -40,7 +40,7 @@ namespace Introduction.Repository
             }
         }
 
-        public async Task<bool> Post(DogOwnerFilter ownerFilter)
+        public async Task<bool> Post(DogOwner dogOwner)
         {
             try
             {
@@ -54,10 +54,10 @@ namespace Introduction.Repository
                 using var command = new NpgsqlCommand(commandText, connection);
 
                 command.Parameters.AddWithValue("@id", Guid.NewGuid());
-                command.Parameters.AddWithValue("@FirstName", $"{ ownerFilter.FirstName }");
-                command.Parameters.AddWithValue("@LastName", $"{ownerFilter.LastName}");
-                command.Parameters.AddWithValue("@PhoneNumber", $"{ownerFilter.PhoneNumber}");
-                command.Parameters.AddWithValue("@Email", $"{ownerFilter.Email}");
+                command.Parameters.AddWithValue("@FirstName", dogOwner.FirstName);
+                command.Parameters.AddWithValue("@LastName", dogOwner.LastName);
+                command.Parameters.AddWithValue("@PhoneNumber", dogOwner.PhoneNumber);
+                command.Parameters.AddWithValue("@Email", dogOwner.Email);
 
                 connection.Open();
 

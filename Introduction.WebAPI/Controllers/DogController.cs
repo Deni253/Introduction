@@ -1,4 +1,5 @@
-﻿using Introduction.Model;
+﻿using Introduction.Common;
+using Introduction.Model;
 using Introduction.Service.Common;
 using Microsoft.AspNetCore.Mvc;
 
@@ -62,9 +63,17 @@ namespace Introduction.Repository.Controllers
 
         [HttpGet]
         [Route("getall")]
-        public async Task<IActionResult> GetAll()
+        public async Task<IActionResult> GetAll(Guid id, string? Name, bool? isTrained, int age, string? breed)
         {
-            var isSuccessful = await _service.GetAll();
+            DogFilter filter = new DogFilter();
+            Sorting sorting = new Sorting();
+            filter.Id = id;
+            filter.Name = Name;
+            filter.IsTrained = isTrained;
+            filter.Age = age;
+            filter.Breed = breed;
+
+            var isSuccessful = await _service.GetAll(filter,sorting);
             if (isSuccessful == null)
             {
                 return BadRequest();

@@ -2,7 +2,7 @@
 {
     public class Sorting
     {
-        private string OrderBy;
-        private string SortDirection = "ASC";
+        public string OrderBy;
+        public string SortDirection = "DESC";
     }
 }

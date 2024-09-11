@@ -1,4 +1,5 @@
-﻿using Introduction.Model;
+﻿using Introduction.Common;
+using Introduction.Model;
 using Introduction.Repository.Common;
 using Introduction.Service.Common;
 
@@ -28,9 +29,9 @@ namespace Introduction.Service
             return await _repository.Get(id);
         }
 
-        public async Task<List<Dog>> GetAll()
+        public async Task<List<Dog>> GetAll(DogFilter filter,Sorting sorting)
         {
-            return await _repository.GetAll();
+            return await _repository.GetAll(filter,sorting);
         }
 
         public async Task<bool> UpdateDog(Guid id)

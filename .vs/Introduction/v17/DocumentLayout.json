@@ -3,60 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\cukar\\source\\repos\\Introduction\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4D2FBD36-4EB0-4DD5-90E1-8B17F06F88BF}|Introduction.WebAPI\\Introduction.WebAPI.csproj|c:\\users\\cukar\\source\\repos\\introduction\\introduction.webapi\\controllers\\dogownercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4D2FBD36-4EB0-4DD5-90E1-8B17F06F88BF}|Introduction.WebAPI\\Introduction.WebAPI.csproj|solutionrelative:introduction.webapi\\controllers\\dogownercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DA579C6E-2260-4C70-BE95-CBBE7EC3E162}|Introduction.Service.Common\\Introduction.Service.Common.csproj|c:\\users\\cukar\\source\\repos\\introduction\\introduction.service.common\\idogownerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DA579C6E-2260-4C70-BE95-CBBE7EC3E162}|Introduction.Service.Common\\Introduction.Service.Common.csproj|solutionrelative:introduction.service.common\\idogownerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8A5CCEF3-93F2-420E-B9C2-35BA71D13F21}|Introduction.Service\\Introduction.Service.csproj|c:\\users\\cukar\\source\\repos\\introduction\\introduction.service\\dogservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8A5CCEF3-93F2-420E-B9C2-35BA71D13F21}|Introduction.Service\\Introduction.Service.csproj|solutionrelative:introduction.service\\dogservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8A5CCEF3-93F2-420E-B9C2-35BA71D13F21}|Introduction.Service\\Introduction.Service.csproj|c:\\users\\cukar\\source\\repos\\introduction\\introduction.service\\dogownerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8A5CCEF3-93F2-420E-B9C2-35BA71D13F21}|Introduction.Service\\Introduction.Service.csproj|solutionrelative:introduction.service\\dogownerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{73F203E0-63F2-48EA-A7EC-B2A622D74A70}|Introduction.Model\\Introduction.Model.csproj|c:\\users\\cukar\\source\\repos\\introduction\\introduction.model\\dogowner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{73F203E0-63F2-48EA-A7EC-B2A622D74A70}|Introduction.Model\\Introduction.Model.csproj|solutionrelative:introduction.model\\dogowner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E4A2D0B1-480D-49C7-8CE3-5AA9B148CC28}|Introduction.Repository\\Introduction.Repository.csproj|c:\\users\\cukar\\source\\repos\\introduction\\introduction.repository\\dogownerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E4A2D0B1-480D-49C7-8CE3-5AA9B148CC28}|Introduction.Repository\\Introduction.Repository.csproj|solutionrelative:introduction.repository\\dogownerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{49F39F5B-3C1A-4A6F-B066-49BEE0D28302}|Introduction.Repository.Common\\Introduction.Repository.Common.csproj|c:\\users\\cukar\\source\\repos\\introduction\\introduction.repository.common\\idogownerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{49F39F5B-3C1A-4A6F-B066-49BEE0D28302}|Introduction.Repository.Common\\Introduction.Repository.Common.csproj|solutionrelative:introduction.repository.common\\idogownerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E4A2D0B1-480D-49C7-8CE3-5AA9B148CC28}|Introduction.Repository\\Introduction.Repository.csproj|c:\\users\\cukar\\source\\repos\\introduction\\introduction.repository\\dogrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E4A2D0B1-480D-49C7-8CE3-5AA9B148CC28}|Introduction.Repository\\Introduction.Repository.csproj|solutionrelative:introduction.repository\\dogrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3EB28855-0F90-4098-AAA5-1E1A0230FA8D}|Introduction.Common\\Introduction.Common.csproj|c:\\users\\cukar\\source\\repos\\introduction\\introduction.common\\dogfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3EB28855-0F90-4098-AAA5-1E1A0230FA8D}|Introduction.Common\\Introduction.Common.csproj|solutionrelative:introduction.common\\dogfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DA579C6E-2260-4C70-BE95-CBBE7EC3E162}|Introduction.Service.Common\\Introduction.Service.Common.csproj|c:\\users\\cukar\\source\\repos\\introduction\\introduction.service.common\\idogservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DA579C6E-2260-4C70-BE95-CBBE7EC3E162}|Introduction.Service.Common\\Introduction.Service.Common.csproj|solutionrelative:introduction.service.common\\idogservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4D2FBD36-4EB0-4DD5-90E1-8B17F06F88BF}|Introduction.WebAPI\\Introduction.WebAPI.csproj|c:\\users\\cukar\\source\\repos\\introduction\\introduction.webapi\\controllers\\dogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4D2FBD36-4EB0-4DD5-90E1-8B17F06F88BF}|Introduction.WebAPI\\Introduction.WebAPI.csproj|solutionrelative:introduction.webapi\\controllers\\dogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3EB28855-0F90-4098-AAA5-1E1A0230FA8D}|Introduction.Common\\Introduction.Common.csproj|c:\\users\\cukar\\source\\repos\\introduction\\introduction.common\\dogownerfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3EB28855-0F90-4098-AAA5-1E1A0230FA8D}|Introduction.Common\\Introduction.Common.csproj|solutionrelative:introduction.common\\dogownerfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{73F203E0-63F2-48EA-A7EC-B2A622D74A70}|Introduction.Model\\Introduction.Model.csproj|c:\\users\\cukar\\source\\repos\\introduction\\introduction.model\\dog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{73F203E0-63F2-48EA-A7EC-B2A622D74A70}|Introduction.Model\\Introduction.Model.csproj|solutionrelative:introduction.model\\dog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3EB28855-0F90-4098-AAA5-1E1A0230FA8D}|Introduction.Common\\Introduction.Common.csproj|c:\\users\\cukar\\source\\repos\\introduction\\introduction.common\\paging.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3EB28855-0F90-4098-AAA5-1E1A0230FA8D}|Introduction.Common\\Introduction.Common.csproj|solutionrelative:introduction.common\\paging.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3EB28855-0F90-4098-AAA5-1E1A0230FA8D}|Introduction.Common\\Introduction.Common.csproj|c:\\users\\cukar\\source\\repos\\introduction\\introduction.common\\sorting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3EB28855-0F90-4098-AAA5-1E1A0230FA8D}|Introduction.Common\\Introduction.Common.csproj|solutionrelative:introduction.common\\sorting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3EB28855-0F90-4098-AAA5-1E1A0230FA8D}|Introduction.Common\\Introduction.Common.csproj|c:\\users\\cukar\\source\\repos\\introduction\\introduction.common\\paging.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3EB28855-0F90-4098-AAA5-1E1A0230FA8D}|Introduction.Common\\Introduction.Common.csproj|solutionrelative:introduction.common\\paging.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8A5CCEF3-93F2-420E-B9C2-35BA71D13F21}|Introduction.Service\\Introduction.Service.csproj|c:\\users\\cukar\\source\\repos\\introduction\\introduction.service\\dogservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A5CCEF3-93F2-420E-B9C2-35BA71D13F21}|Introduction.Service\\Introduction.Service.csproj|solutionrelative:introduction.service\\dogservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA579C6E-2260-4C70-BE95-CBBE7EC3E162}|Introduction.Service.Common\\Introduction.Service.Common.csproj|c:\\users\\cukar\\source\\repos\\introduction\\introduction.service.common\\idogservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA579C6E-2260-4C70-BE95-CBBE7EC3E162}|Introduction.Service.Common\\Introduction.Service.Common.csproj|solutionrelative:introduction.service.common\\idogservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3EB28855-0F90-4098-AAA5-1E1A0230FA8D}|Introduction.Common\\Introduction.Common.csproj|c:\\users\\cukar\\source\\repos\\introduction\\introduction.common\\dogfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3EB28855-0F90-4098-AAA5-1E1A0230FA8D}|Introduction.Common\\Introduction.Common.csproj|solutionrelative:introduction.common\\dogfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4D2FBD36-4EB0-4DD5-90E1-8B17F06F88BF}|Introduction.WebAPI\\Introduction.WebAPI.csproj|c:\\users\\cukar\\source\\repos\\introduction\\introduction.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -65,6 +41,34 @@
     {
       "AbsoluteMoniker": "D:0:0:{49F39F5B-3C1A-4A6F-B066-49BEE0D28302}|Introduction.Repository.Common\\Introduction.Repository.Common.csproj|c:\\users\\cukar\\source\\repos\\introduction\\introduction.repository.common\\idogrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{49F39F5B-3C1A-4A6F-B066-49BEE0D28302}|Introduction.Repository.Common\\Introduction.Repository.Common.csproj|solutionrelative:introduction.repository.common\\idogrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E4A2D0B1-480D-49C7-8CE3-5AA9B148CC28}|Introduction.Repository\\Introduction.Repository.csproj|c:\\users\\cukar\\source\\repos\\introduction\\introduction.repository\\dogownerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E4A2D0B1-480D-49C7-8CE3-5AA9B148CC28}|Introduction.Repository\\Introduction.Repository.csproj|solutionrelative:introduction.repository\\dogownerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3EB28855-0F90-4098-AAA5-1E1A0230FA8D}|Introduction.Common\\Introduction.Common.csproj|c:\\users\\cukar\\source\\repos\\introduction\\introduction.common\\dogownerfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3EB28855-0F90-4098-AAA5-1E1A0230FA8D}|Introduction.Common\\Introduction.Common.csproj|solutionrelative:introduction.common\\dogownerfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D2FBD36-4EB0-4DD5-90E1-8B17F06F88BF}|Introduction.WebAPI\\Introduction.WebAPI.csproj|c:\\users\\cukar\\source\\repos\\introduction\\introduction.webapi\\controllers\\dogownercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D2FBD36-4EB0-4DD5-90E1-8B17F06F88BF}|Introduction.WebAPI\\Introduction.WebAPI.csproj|solutionrelative:introduction.webapi\\controllers\\dogownercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73F203E0-63F2-48EA-A7EC-B2A622D74A70}|Introduction.Model\\Introduction.Model.csproj|c:\\users\\cukar\\source\\repos\\introduction\\introduction.model\\dogowner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{73F203E0-63F2-48EA-A7EC-B2A622D74A70}|Introduction.Model\\Introduction.Model.csproj|solutionrelative:introduction.model\\dogowner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49F39F5B-3C1A-4A6F-B066-49BEE0D28302}|Introduction.Repository.Common\\Introduction.Repository.Common.csproj|c:\\users\\cukar\\source\\repos\\introduction\\introduction.repository.common\\idogownerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49F39F5B-3C1A-4A6F-B066-49BEE0D28302}|Introduction.Repository.Common\\Introduction.Repository.Common.csproj|solutionrelative:introduction.repository.common\\idogownerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A5CCEF3-93F2-420E-B9C2-35BA71D13F21}|Introduction.Service\\Introduction.Service.csproj|c:\\users\\cukar\\source\\repos\\introduction\\introduction.service\\dogownerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A5CCEF3-93F2-420E-B9C2-35BA71D13F21}|Introduction.Service\\Introduction.Service.csproj|solutionrelative:introduction.service\\dogownerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA579C6E-2260-4C70-BE95-CBBE7EC3E162}|Introduction.Service.Common\\Introduction.Service.Common.csproj|c:\\users\\cukar\\source\\repos\\introduction\\introduction.service.common\\idogownerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA579C6E-2260-4C70-BE95-CBBE7EC3E162}|Introduction.Service.Common\\Introduction.Service.Common.csproj|solutionrelative:introduction.service.common\\idogownerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -74,180 +78,50 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "IDogOwnerRepository.cs",
-              "DocumentMoniker": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.Repository.Common\\IDogOwnerRepository.cs",
-              "RelativeDocumentMoniker": "Introduction.Repository.Common\\IDogOwnerRepository.cs",
-              "ToolTip": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.Repository.Common\\IDogOwnerRepository.cs",
-              "RelativeToolTip": "Introduction.Repository.Common\\IDogOwnerRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-11T08:28:33.953Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "DogOwnerController.cs",
-              "DocumentMoniker": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.WebAPI\\Controllers\\DogOwnerController.cs",
-              "RelativeDocumentMoniker": "Introduction.WebAPI\\Controllers\\DogOwnerController.cs",
-              "ToolTip": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.WebAPI\\Controllers\\DogOwnerController.cs",
-              "RelativeToolTip": "Introduction.WebAPI\\Controllers\\DogOwnerController.cs",
-              "ViewState": "AgIAACkAAAAAAAAAAAApwDkAAABFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-11T10:56:57.41Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "DogOwnerRepository.cs",
-              "DocumentMoniker": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.Repository\\DogOwnerRepository.cs",
-              "RelativeDocumentMoniker": "Introduction.Repository\\DogOwnerRepository.cs",
-              "ToolTip": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.Repository\\DogOwnerRepository.cs",
-              "RelativeToolTip": "Introduction.Repository\\DogOwnerRepository.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAuwBYAAABaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-11T07:37:41.492Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "DogOwner.cs",
-              "DocumentMoniker": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.Model\\DogOwner.cs",
-              "RelativeDocumentMoniker": "Introduction.Model\\DogOwner.cs",
-              "ToolTip": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.Model\\DogOwner.cs",
-              "RelativeToolTip": "Introduction.Model\\DogOwner.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-11T08:16:12.06Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "DogOwnerService.cs",
-              "DocumentMoniker": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.Service\\DogOwnerService.cs",
-              "RelativeDocumentMoniker": "Introduction.Service\\DogOwnerService.cs",
-              "ToolTip": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.Service\\DogOwnerService.cs",
-              "RelativeToolTip": "Introduction.Service\\DogOwnerService.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAuwAcAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-11T08:25:02.078Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DogService.cs",
-              "DocumentMoniker": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.Service\\DogService.cs",
-              "RelativeDocumentMoniker": "Introduction.Service\\DogService.cs",
-              "ToolTip": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.Service\\DogService.cs",
-              "RelativeToolTip": "Introduction.Service\\DogService.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-11T08:27:50.534Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "IDogOwnerService.cs",
-              "DocumentMoniker": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.Service.Common\\IDogOwnerService.cs",
-              "RelativeDocumentMoniker": "Introduction.Service.Common\\IDogOwnerService.cs",
-              "ToolTip": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.Service.Common\\IDogOwnerService.cs",
-              "RelativeToolTip": "Introduction.Service.Common\\IDogOwnerService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA+AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-11T08:25:27.999Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "DogRepository.cs",
-              "DocumentMoniker": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.Repository\\DogRepository.cs",
-              "RelativeDocumentMoniker": "Introduction.Repository\\DogRepository.cs",
-              "ToolTip": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.Repository\\DogRepository.cs",
-              "RelativeToolTip": "Introduction.Repository\\DogRepository.cs",
-              "ViewState": "AgIAACUAAAAAAAAAAAAAAEkAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-11T08:29:42.14Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "DogFilter.cs",
-              "DocumentMoniker": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.Common\\DogFilter.cs",
-              "RelativeDocumentMoniker": "Introduction.Common\\DogFilter.cs",
-              "ToolTip": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.Common\\DogFilter.cs",
-              "RelativeToolTip": "Introduction.Common\\DogFilter.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-11T11:58:19.001Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "IDogService.cs",
-              "DocumentMoniker": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.Service.Common\\IDogService.cs",
-              "RelativeDocumentMoniker": "Introduction.Service.Common\\IDogService.cs",
-              "ToolTip": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.Service.Common\\IDogService.cs",
-              "RelativeToolTip": "Introduction.Service.Common\\IDogService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-11T08:25:29.404Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
               "Title": "DogController.cs",
               "DocumentMoniker": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.WebAPI\\Controllers\\DogController.cs",
               "RelativeDocumentMoniker": "Introduction.WebAPI\\Controllers\\DogController.cs",
               "ToolTip": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.WebAPI\\Controllers\\DogController.cs",
               "RelativeToolTip": "Introduction.WebAPI\\Controllers\\DogController.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAwEIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADwAAAAAAAAAAAApwEsAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-11T08:24:26.626Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "DogOwnerFilter.cs",
-              "DocumentMoniker": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.Common\\DogOwnerFilter.cs",
-              "RelativeDocumentMoniker": "Introduction.Common\\DogOwnerFilter.cs",
-              "ToolTip": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.Common\\DogOwnerFilter.cs",
-              "RelativeToolTip": "Introduction.Common\\DogOwnerFilter.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAqAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "Dog.cs",
+              "DocumentMoniker": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.Model\\Dog.cs",
+              "RelativeDocumentMoniker": "Introduction.Model\\Dog.cs",
+              "ToolTip": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.Model\\Dog.cs",
+              "RelativeToolTip": "Introduction.Model\\Dog.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-11T08:08:55.25Z",
+              "WhenOpened": "2024-09-11T15:56:42.079Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Sorting.cs",
-              "DocumentMoniker": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.Common\\Sorting.cs",
-              "RelativeDocumentMoniker": "Introduction.Common\\Sorting.cs",
-              "ToolTip": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.Common\\Sorting.cs",
-              "RelativeToolTip": "Introduction.Common\\Sorting.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAFAAAAAAAAAA==",
+              "DocumentIndex": 9,
+              "Title": "IDogRepository.cs",
+              "DocumentMoniker": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.Repository.Common\\IDogRepository.cs",
+              "RelativeDocumentMoniker": "Introduction.Repository.Common\\IDogRepository.cs",
+              "ToolTip": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.Repository.Common\\IDogRepository.cs",
+              "RelativeToolTip": "Introduction.Repository.Common\\IDogRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-11T08:11:25.818Z",
+              "WhenOpened": "2024-09-10T14:12:54.583Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 3,
               "Title": "Paging.cs",
               "DocumentMoniker": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.Common\\Paging.cs",
               "RelativeDocumentMoniker": "Introduction.Common\\Paging.cs",
@@ -260,29 +134,167 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "IDogRepository.cs",
-              "DocumentMoniker": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.Repository.Common\\IDogRepository.cs",
-              "RelativeDocumentMoniker": "Introduction.Repository.Common\\IDogRepository.cs",
-              "ToolTip": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.Repository.Common\\IDogRepository.cs",
-              "RelativeToolTip": "Introduction.Repository.Common\\IDogRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "Sorting.cs",
+              "DocumentMoniker": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.Common\\Sorting.cs",
+              "RelativeDocumentMoniker": "Introduction.Common\\Sorting.cs",
+              "ToolTip": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.Common\\Sorting.cs",
+              "RelativeToolTip": "Introduction.Common\\Sorting.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-10T14:12:54.583Z",
+              "WhenOpened": "2024-09-11T08:11:25.818Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 5,
+              "Title": "DogService.cs",
+              "DocumentMoniker": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.Service\\DogService.cs",
+              "RelativeDocumentMoniker": "Introduction.Service\\DogService.cs",
+              "ToolTip": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.Service\\DogService.cs",
+              "RelativeToolTip": "Introduction.Service\\DogService.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAlwCEAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T08:27:50.534Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DogRepository.cs",
+              "DocumentMoniker": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.Repository\\DogRepository.cs",
+              "RelativeDocumentMoniker": "Introduction.Repository\\DogRepository.cs",
+              "ToolTip": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.Repository\\DogRepository.cs",
+              "RelativeToolTip": "Introduction.Repository\\DogRepository.cs",
+              "ViewState": "AgIAAKsAAAAAAAAAAAAowLcAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T16:16:05.859Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IDogService.cs",
+              "DocumentMoniker": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.Service.Common\\IDogService.cs",
+              "RelativeDocumentMoniker": "Introduction.Service.Common\\IDogService.cs",
+              "ToolTip": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.Service.Common\\IDogService.cs",
+              "RelativeToolTip": "Introduction.Service.Common\\IDogService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T08:25:29.404Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "DogFilter.cs",
+              "DocumentMoniker": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.Common\\DogFilter.cs",
+              "RelativeDocumentMoniker": "Introduction.Common\\DogFilter.cs",
+              "ToolTip": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.Common\\DogFilter.cs",
+              "RelativeToolTip": "Introduction.Common\\DogFilter.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAA+wAwAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T11:58:19.001Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.WebAPI\\Program.cs",
               "RelativeDocumentMoniker": "Introduction.WebAPI\\Program.cs",
               "ToolTip": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.WebAPI\\Program.cs",
               "RelativeToolTip": "Introduction.WebAPI\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-10T14:12:47.8Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "DogOwnerRepository.cs",
+              "DocumentMoniker": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.Repository\\DogOwnerRepository.cs",
+              "RelativeDocumentMoniker": "Introduction.Repository\\DogOwnerRepository.cs",
+              "ToolTip": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.Repository\\DogOwnerRepository.cs",
+              "RelativeToolTip": "Introduction.Repository\\DogOwnerRepository.cs",
+              "ViewState": "AgIAAKwAAAAAAAAAAAAQwLYAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T07:37:41.492Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "DogOwnerFilter.cs",
+              "DocumentMoniker": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.Common\\DogOwnerFilter.cs",
+              "RelativeDocumentMoniker": "Introduction.Common\\DogOwnerFilter.cs",
+              "ToolTip": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.Common\\DogOwnerFilter.cs",
+              "RelativeToolTip": "Introduction.Common\\DogOwnerFilter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T08:08:55.25Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "DogOwner.cs",
+              "DocumentMoniker": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.Model\\DogOwner.cs",
+              "RelativeDocumentMoniker": "Introduction.Model\\DogOwner.cs",
+              "ToolTip": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.Model\\DogOwner.cs",
+              "RelativeToolTip": "Introduction.Model\\DogOwner.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T08:16:12.06Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "DogOwnerController.cs",
+              "DocumentMoniker": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.WebAPI\\Controllers\\DogOwnerController.cs",
+              "RelativeDocumentMoniker": "Introduction.WebAPI\\Controllers\\DogOwnerController.cs",
+              "ToolTip": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.WebAPI\\Controllers\\DogOwnerController.cs",
+              "RelativeToolTip": "Introduction.WebAPI\\Controllers\\DogOwnerController.cs",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAkwCsAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T10:56:57.41Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "IDogOwnerRepository.cs",
+              "DocumentMoniker": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.Repository.Common\\IDogOwnerRepository.cs",
+              "RelativeDocumentMoniker": "Introduction.Repository.Common\\IDogOwnerRepository.cs",
+              "ToolTip": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.Repository.Common\\IDogOwnerRepository.cs",
+              "RelativeToolTip": "Introduction.Repository.Common\\IDogOwnerRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T08:28:33.953Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "IDogOwnerService.cs",
+              "DocumentMoniker": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.Service.Common\\IDogOwnerService.cs",
+              "RelativeDocumentMoniker": "Introduction.Service.Common\\IDogOwnerService.cs",
+              "ToolTip": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.Service.Common\\IDogOwnerService.cs",
+              "RelativeToolTip": "Introduction.Service.Common\\IDogOwnerService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T08:25:27.999Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "DogOwnerService.cs",
+              "DocumentMoniker": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.Service\\DogOwnerService.cs",
+              "RelativeDocumentMoniker": "Introduction.Service\\DogOwnerService.cs",
+              "ToolTip": "C:\\Users\\cukar\\source\\repos\\Introduction\\Introduction.Service\\DogOwnerService.cs",
+              "RelativeToolTip": "Introduction.Service\\DogOwnerService.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAIA5wBIAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T08:25:02.078Z"
             }
           ]
         }

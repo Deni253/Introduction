@@ -18,22 +18,10 @@ namespace Introduction.Repository.Controllers
 
         [HttpPost]
         [Route("create")]
-        public async Task<IActionResult> PostDogOwner(Guid? Id, string? firstName, string? lastName, string? phoneNumber, string? Email)
+        public async Task<IActionResult> PostDogOwner(DogOwner dogOwner)
         {
-            DogOwnerFilter filter = new DogOwnerFilter();
-            filter.FirstName = firstName;
-            filter.LastName = lastName;
-            filter.PhoneNumber = phoneNumber;
-            filter.Email = Email;
 
-            /*
-            Paging paging = new Paging();
-            paging.PageSize = 10;
-
-            Sorting sorting = new Sorting();
-            */
-
-            var isSuccessful = await _service.PostDogOwner(filter);
+            var isSuccessful = await _service.PostDogOwner(dogOwner);
             if (isSuccessful == false)
             {
                 return BadRequest();
@@ -47,15 +35,10 @@ namespace Introduction.Repository.Controllers
         [HttpDelete]
         //[Route("del/{id}")]
         [Route("del")]
-        public async Task<IActionResult> DeleteDogOwner(Guid? Id, string? firstName, string? lastName, string? phoneNumber, string? Email)
+        public async Task<IActionResult> DeleteDogOwner(Guid id)
         {
-            DogOwnerFilter filter = new DogOwnerFilter();
-            filter.FirstName = firstName;
-            filter.LastName = lastName;
-            filter.PhoneNumber = phoneNumber;
-            filter.Email = Email;
-
-            var isSuccessful = await _service.DeleteDogOwner(filter);
+            
+            var isSuccessful = await _service.DeleteDogOwner(id);
             if (isSuccessful == false)
             {
                 return BadRequest();

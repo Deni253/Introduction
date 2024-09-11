@@ -5,9 +5,9 @@ namespace Introduction.Service.Common
 {
     public interface IDogOwnerService
     {
-        Task<bool> DeleteDogOwner(DogOwnerFilter ownerFilter);
+        Task<bool> DeleteDogOwner(Guid id);
 
-        Task<bool> PostDogOwner(DogOwnerFilter ownerFilter);
+        Task<bool> PostDogOwner(DogOwner owner);
 
         Task<DogOwner> GetDogOwner(Guid id);
 

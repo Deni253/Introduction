@@ -9,7 +9,7 @@
         public int Age { get; set; }
         public string? FurColor { get; set; }
         public string? Breed { get; set; }
-        public bool? IsTrained { get; set; }
+        public bool IsTrained { get; set; }
         public DogOwner? DogOwner { get; set; }
     }
 }

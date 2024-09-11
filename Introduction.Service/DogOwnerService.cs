@@ -14,14 +14,14 @@ namespace Introduction.Service
             _repository = repository;
         }
 
-        public async Task<bool> PostDogOwner(DogOwnerFilter ownerFilter)
+        public async Task<bool> PostDogOwner(DogOwner owner)
         {
-            return await _repository.Post(ownerFilter);
+            return await _repository.Post(owner);
         }
 
-        public async Task<bool> DeleteDogOwner(DogOwnerFilter ownerFilter)
+        public async Task<bool> DeleteDogOwner(Guid id)
         {
-            return await _repository.Delete(ownerFilter);
+            return await _repository.Delete(id);
         }
 
         public async Task<DogOwner> GetDogOwner(Guid id)

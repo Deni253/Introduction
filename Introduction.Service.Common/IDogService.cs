@@ -1,4 +1,5 @@
-﻿using Introduction.Model;
+﻿using Introduction.Common;
+using Introduction.Model;
 
 namespace Introduction.Service.Common
 {
@@ -10,7 +11,7 @@ namespace Introduction.Service.Common
 
         Task<Dog> GetDog(Guid id);
 
-        Task<List<Dog>> GetAll();
+        Task<List<Dog>> GetAll(DogFilter filter,Sorting sorting);
 
         Task<bool> UpdateDog(Guid id);
     }

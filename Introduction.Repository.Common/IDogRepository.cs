@@ -1,4 +1,5 @@
-﻿using Introduction.Model;
+﻿using Introduction.Common;
+using Introduction.Model;
 
 namespace Introduction.Repository.Common
 {
@@ -12,6 +13,6 @@ namespace Introduction.Repository.Common
 
         Task<Dog> Get(Guid id);
 
-        Task<List<Dog>> GetAll();
+        Task<List<Dog>> GetAll(DogFilter filter, Sorting sorting);
     }
 }

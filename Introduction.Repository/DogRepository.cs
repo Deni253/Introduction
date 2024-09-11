@@ -1,6 +1,8 @@
-﻿using Introduction.Model;
+﻿using Introduction.Common;
+using Introduction.Model;
 using Introduction.Repository.Common;
 using Npgsql;
+using System.Text;
 
 //using Introduction.Repository.Common;
 
@@ -108,17 +110,84 @@ namespace Introduction.Repository
             }
         }
 
-        public async Task<List<Dog>> GetAll()
+        public async Task<List<Dog>> GetAll(DogFilter filter,Sorting sorting)
         {
             try
             {
+                if (filter == null)
+                {
+                    return new List<Dog>();
+                }
+
+                StringBuilder stringBuilder = new StringBuilder();
                 List<Dog> dogs = new List<Dog>();
                 using var connection = new NpgsqlConnection(connectionString);
-                var commandText = "SELECT * FROM \"Dog\";";
-                //var commandText = "SELECT * FROM \"Dog\" FULL OUTER JOIN \"DogOwner\"ON\"Dog.DogOwnerID\"=DogOwner.Id;";
+                var commandText = "SELECT * FROM \"Dog\" WHERE 1=1";
+
+                stringBuilder.Append(commandText);
+
+                if (!string.IsNullOrEmpty(filter.Name))
+                {
+                    stringBuilder.Append(" AND \"Name\"=@name");
+                }
+
+                if (!string.IsNullOrEmpty(filter.Breed))
+                {
+                    stringBuilder.Append(" AND \"Breed\"=@breed");
+                }
+
+                if (filter.Age > 0)
+                {
+                    stringBuilder.Append(" AND \"Age\"=@age"); //problem su bool i int
+                }
+
+                if (filter.IsTrained.HasValue)
+                {
+                    stringBuilder.Append(" AND \"IsTrained\"=@isTrained");
+                }
+                if (!string.IsNullOrEmpty(sorting.OrderBy))
+                {
+                    stringBuilder.Append(" ORDER BY \"Name\" ASC");
+                }
+                
+
+
+
+
+                commandText = stringBuilder.ToString();
+
                 using var command = new NpgsqlCommand(commandText, connection);
 
-                //command.Parameters.AddWithValue("@id", id);
+                if (!string.IsNullOrEmpty(filter.Name))
+                {
+                    command.Parameters.AddWithValue("@name", filter.Name);
+                }
+
+                if (!string.IsNullOrEmpty(filter.Breed))
+                {
+                    command.Parameters.AddWithValue("@breed", filter.Breed);
+                }
+
+                if (filter.Age > 0)
+                {
+                    command.Parameters.AddWithValue("@age", filter.Age);
+                }
+
+                if (filter.IsTrained.HasValue)
+                {
+                    command.Parameters.AddWithValue("@isTrained", filter.IsTrained);
+                }
+                if (filter.IsTrained.HasValue)
+                {
+                    command.Parameters.AddWithValue("@isTrained", filter.IsTrained);
+                }
+                if (!string.IsNullOrEmpty(sorting.OrderBy))
+                {
+                    command.Parameters.AddWithValue("@isTrained", filter.IsTrained);
+                }
+
+
+
                 connection.Open();
                 using NpgsqlDataReader reader = await command.ExecuteReaderAsync();
 
@@ -141,10 +210,12 @@ namespace Introduction.Repository
                         dogs.Add(dog);
                     }
                 }
+
+                connection.Close();
                 return dogs;
             }
-            catch (NpgsqlException)
-            {
+            catch (NpgsqlException )
+            {          
                 return null;
             }
         }

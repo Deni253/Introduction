@@ -54,7 +54,33 @@
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "isTrained",
+        "Type": "System.Nullable\u00601[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "age",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "breed",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -82,29 +108,9 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "Id",
-        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": false
-      },
-      {
-        "Name": "firstName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "lastName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "phoneNumber",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Email",
-        "Type": "System.String",
-        "IsRequired": false
+        "Name": "dogOwner",
+        "Type": "Introduction.Model.DogOwner",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -118,28 +124,8 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "Id",
-        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": false
-      },
-      {
-        "Name": "firstName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "lastName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "phoneNumber",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Email",
-        "Type": "System.String",
+        "Name": "id",
+        "Type": "System.Guid",
         "IsRequired": false
       }
     ],
