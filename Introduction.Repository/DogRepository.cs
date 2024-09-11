@@ -1,13 +1,12 @@
-﻿using Introduction.Common;
-using Introduction.Model;
+﻿using Introduction.Model;
 using Introduction.Repository.Common;
 using Npgsql;
-//using Introduction.Repository.Common;
 
+//using Introduction.Repository.Common;
 
 namespace Introduction.Repository
 {
-    public class DogRepository:IDogRepository //ne radi (sve crud metode rade osim što ovo nisam uspio naslijediti)
+    public class DogRepository : IDogRepository //ne radi (sve crud metode rade osim što ovo nisam uspio naslijediti)
     {
         private string connectionString = "Host=localhost;Port=5432;Database=postgres;Username=postgres;Password=postgres";
 
@@ -15,7 +14,6 @@ namespace Introduction.Repository
         {
             try
             {
-
                 using var connection = new NpgsqlConnection(connectionString);
 
                 var commandText = "DELETE FROM \"Dog\"WHERE\"Id\"=@Id;";
@@ -32,9 +30,8 @@ namespace Introduction.Repository
 
                 if (numberofcommits == 0)
                     return false;
-                return true;    
+                return true;
             }
-
             catch (NpgsqlException)
             {
                 return false;
@@ -69,14 +66,13 @@ namespace Introduction.Repository
                 if (numberofcommits == 0)
                     return false;
                 return true;
-
             }
-
             catch (NpgsqlException)
             {
                 return false;
             }
         }
+
         public async Task<Dog> Get(Guid id)
         {
             try
@@ -95,7 +91,6 @@ namespace Introduction.Repository
                     //while(read)
                     reader.Read();
 
-
                     dog.Id = Guid.Parse(reader[0].ToString());
                     dog.DogOwnerId = Guid.Parse(reader[1].ToString());
                     dog.Name = reader[2].ToString();
@@ -104,8 +99,7 @@ namespace Introduction.Repository
                     dog.FurColor = reader[5].ToString();
                     dog.Breed = reader[6].ToString();
                     dog.IsTrained = Convert.ToBoolean(reader[7]);
-
-                }        
+                }
                 return dog;
             }
             catch (NpgsqlException)
@@ -113,11 +107,12 @@ namespace Introduction.Repository
                 return null;
             }
         }
+
         public async Task<List<Dog>> GetAll()
         {
             try
             {
-                List<Dog> dogs = new List<Dog>();     
+                List<Dog> dogs = new List<Dog>();
                 using var connection = new NpgsqlConnection(connectionString);
                 var commandText = "SELECT * FROM \"Dog\";";
                 //var commandText = "SELECT * FROM \"Dog\" FULL OUTER JOIN \"DogOwner\"ON\"Dog.DogOwnerID\"=DogOwner.Id;";
@@ -142,19 +137,17 @@ namespace Introduction.Repository
                             Breed = reader[6].ToString(),
                             IsTrained = Convert.ToBoolean(reader[7]),
                         };
-                    
+
                         dogs.Add(dog);
                     }
                 }
                 return dogs;
             }
-
             catch (NpgsqlException)
             {
                 return null;
             }
         }
-
 
         public async Task<bool> Update(Guid id)
         {
@@ -170,7 +163,6 @@ namespace Introduction.Repository
                 command.Parameters.AddWithValue("@IsTrained", true);
                 command.Parameters.AddWithValue("@Id", id);
 
-
                 connection.Open();
 
                 var numberofcommits = await command.ExecuteNonQueryAsync();
@@ -182,7 +174,6 @@ namespace Introduction.Repository
 
                 return true;
             }
-
             catch (NpgsqlException)
             {
                 return false;

@@ -1,8 +1,6 @@
 ﻿using Introduction.Model;
-using Introduction.Service;
 using Introduction.Service.Common;
 using Microsoft.AspNetCore.Mvc;
-using Npgsql;
 
 namespace Introduction.Repository.Controllers
 {
@@ -11,16 +9,16 @@ namespace Introduction.Repository.Controllers
     public class DogController : ControllerBase
     {
         private IDogService _service;
+
         public DogController(IDogService service)
         {
             _service = service;
         }
-   
+
         [HttpPost]
         [Route("create")]
         public async Task<IActionResult> PostDog(Dog dog)
         {
-            
             var isSuccessful = await _service.PostDog(dog);
             if (isSuccessful == false)
             {
@@ -36,7 +34,6 @@ namespace Introduction.Repository.Controllers
         [Route("del/{id}")]
         public async Task<IActionResult> DeleteDog(Guid id)
         {
-            
             var isSuccessful = await _service.DeleteDog(id);
             if (isSuccessful == false)
             {
@@ -52,8 +49,7 @@ namespace Introduction.Repository.Controllers
         [Route("get/{id}")]
         public async Task<IActionResult> GetDog(Guid id)
         {
-            
-            var isSuccessful =  await _service.GetDog(id);//isSuccessful je ovdje objekt za razliku od ovih ostalih gdje je bool
+            var isSuccessful = await _service.GetDog(id);//isSuccessful je ovdje objekt za razliku od ovih ostalih gdje je bool
             if (isSuccessful == null)
             {
                 return BadRequest();
@@ -68,7 +64,7 @@ namespace Introduction.Repository.Controllers
         [Route("getall")]
         public async Task<IActionResult> GetAll()
         {
-            var isSuccessful = await _service.GetAll();//isSuccessful je ovdje objekt za razliku od ovih ostalih gdje je bool
+            var isSuccessful = await _service.GetAll();
             if (isSuccessful == null)
             {
                 return BadRequest();
@@ -79,12 +75,10 @@ namespace Introduction.Repository.Controllers
             }
         }
 
-
         [HttpPut]
         [Route("update/{id}")]
         public async Task<IActionResult> UpdateDog(Guid id)
         {
-            
             var isSuccessful = await _service.UpdateDog(id);
             if (isSuccessful == false)
             {

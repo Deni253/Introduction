@@ -1,39 +1,42 @@
-﻿using Introduction.Model;
-using Introduction.Repository;
+﻿using Introduction.Common;
+using Introduction.Model;
 using Introduction.Repository.Common;
 using Introduction.Service.Common;
 
 namespace Introduction.Service
 {
-    public class DogOwnerService:IDogOwnerService
+    public class DogOwnerService : IDogOwnerService
     {
         private IDogOwnerRepository _repository;
-        public DogOwnerService(IDogOwnerRepository repository) 
+
+        public DogOwnerService(IDogOwnerRepository repository)
         {
             _repository = repository;
         }
-        public async Task<bool> PostDogOwner(DogOwner dogOwner)
+
+        public async Task<bool> PostDogOwner(DogOwnerFilter ownerFilter)
         {
-            return await _repository.Post(dogOwner);
+            return await _repository.Post(ownerFilter);
         }
-        public async Task<bool> DeleteDogOwner(Guid id)
+
+        public async Task<bool> DeleteDogOwner(DogOwnerFilter ownerFilter)
         {
-            return await _repository.Delete(id);
+            return await _repository.Delete(ownerFilter);
         }
+
         public async Task<DogOwner> GetDogOwner(Guid id)
         {
             return await _repository.Get(id);
         }
 
-        public async Task<DogOwner> GetAll(Guid id)
+        public async Task<List<DogOwner>> GetAll(DogOwnerFilter ownerFilter)
         {
-            return await _repository.Get(id);
+            return await _repository.GetAll(ownerFilter);
         }
 
-        public async Task<bool> UpdateDogOwner(Guid id,DogOwner dog)
+        public async Task<bool> UpdateDogOwner(Guid id, DogOwner dog)
         {
-            return await _repository.Update(id,dog);
+            return await _repository.Update(id, dog);
         }
     }
 }
-

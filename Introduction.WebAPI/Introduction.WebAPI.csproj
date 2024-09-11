@@ -22,4 +22,8 @@
     <ProjectReference Include="..\Introduction.Service\Introduction.Service.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="RestModels\" />
+  </ItemGroup>
+
 </Project>

@@ -1,7 +1,6 @@
 ﻿namespace Introduction.Common
 {
-    public interface IDog
+    public class DogFilter
     {
-
     }
 }
