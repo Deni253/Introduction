@@ -5,14 +5,14 @@ namespace Introduction.Service.Common
 {
     public interface IDogService
     {
-        Task<bool> DeleteDog(Guid id);
+        Task<bool> DeleteDogSync(Guid id);
 
-        Task<bool> PostDog(Dog dog);
+        Task<bool> PostDogSync(Dog dog);
 
-        Task<Dog> GetDog(Guid id);
+        Task<Dog> GetDogSync(Guid id);
 
-        Task<List<Dog>> GetAll(DogFilter filter,Sorting sorting);
+        Task<List<Dog>> GetAllSync(DogFilter filter,Sorting sorting, Paging paging);
 
-        Task<bool> UpdateDog(Guid id);
+        Task<bool> UpdateDogSync(Guid id);
     }
 }

@@ -2,6 +2,8 @@
 using Introduction.Model;
 using Introduction.Repository.Common;
 using Npgsql;
+using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 
 //using Introduction.Repository.Common;
@@ -12,7 +14,7 @@ namespace Introduction.Repository
     {
         private string connectionString = "Host=localhost;Port=5432;Database=postgres;Username=postgres;Password=postgres";
 
-        public async Task<bool> Delete(Guid id)
+        public async Task<bool> DeleteSync(Guid id)
         {
             try
             {
@@ -40,7 +42,7 @@ namespace Introduction.Repository
             }
         }
 
-        public async Task<bool> Post(Dog dog)
+        public async Task<bool> PostSync(Dog dog)
         {
             try
             {
@@ -75,7 +77,7 @@ namespace Introduction.Repository
             }
         }
 
-        public async Task<Dog> Get(Guid id)
+        public async Task<Dog> GetSync(Guid id)
         {
             try
             {
@@ -110,7 +112,7 @@ namespace Introduction.Repository
             }
         }
 
-        public async Task<List<Dog>> GetAll(DogFilter filter,Sorting sorting)
+        public async Task<List<Dog>> GetAllSync(DogFilter filter, Sorting sorting, Paging paging)
         {
             try
             {
@@ -128,39 +130,56 @@ namespace Introduction.Repository
 
                 if (!string.IsNullOrEmpty(filter.Name))
                 {
-                    stringBuilder.Append(" AND \"Name\"=@name");
+                    stringBuilder.Append(" AND \"Name\" ILIKE @Name"); // NAME I
                 }
 
                 if (!string.IsNullOrEmpty(filter.Breed))
                 {
-                    stringBuilder.Append(" AND \"Breed\"=@breed");
+                    stringBuilder.Append(" AND \"Breed\" ILIKE @breed");
                 }
 
                 if (filter.Age > 0)
                 {
-                    stringBuilder.Append(" AND \"Age\"=@age"); //problem su bool i int
+                    stringBuilder.Append(" AND \"Age\"=@age"); 
                 }
 
                 if (filter.IsTrained.HasValue)
                 {
                     stringBuilder.Append(" AND \"IsTrained\"=@isTrained");
                 }
+
                 if (!string.IsNullOrEmpty(sorting.OrderBy))
                 {
-                    stringBuilder.Append(" ORDER BY \"Name\" ASC");
+                    stringBuilder.Append(" ORDER BY ");
+                    stringBuilder.Append($"\"{sorting.OrderBy}\"");
+
+                    if (!string.IsNullOrEmpty(sorting.SortDirection) &&
+                        (string.Equals(sorting.SortDirection, "asc", StringComparison.OrdinalIgnoreCase) ||
+                         string.Equals(sorting.SortDirection, "desc", StringComparison.OrdinalIgnoreCase)))
+                    {
+                        stringBuilder.Append($" {sorting.SortDirection.ToUpper()} ");
+                    }
+                    else
+                    {
+                        stringBuilder.Append(" ASC ");
+                    }
                 }
-                
+
+                if (paging.PageSize > 0)
+                {
+                    stringBuilder.Append("LIMIT @ItemsPerPage OFFSET @Offset ");
+                }
 
 
 
 
                 commandText = stringBuilder.ToString();
-
+                Console.WriteLine(commandText);
                 using var command = new NpgsqlCommand(commandText, connection);
 
                 if (!string.IsNullOrEmpty(filter.Name))
                 {
-                    command.Parameters.AddWithValue("@name", filter.Name);
+                    command.Parameters.AddWithValue("@Name", filter.Name);
                 }
 
                 if (!string.IsNullOrEmpty(filter.Breed))
@@ -177,16 +196,12 @@ namespace Introduction.Repository
                 {
                     command.Parameters.AddWithValue("@isTrained", filter.IsTrained);
                 }
-                if (filter.IsTrained.HasValue)
-                {
-                    command.Parameters.AddWithValue("@isTrained", filter.IsTrained);
-                }
-                if (!string.IsNullOrEmpty(sorting.OrderBy))
-                {
-                    command.Parameters.AddWithValue("@isTrained", filter.IsTrained);
-                }
 
-
+                if (paging.PageSize > 0)
+                {
+                    command.Parameters.AddWithValue("@ItemsPerPage", paging.PageSize);
+                    command.Parameters.AddWithValue("@Offset", (paging.PageNumber - 1) * paging.PageSize);
+                }
 
                 connection.Open();
                 using NpgsqlDataReader reader = await command.ExecuteReaderAsync();
@@ -214,13 +229,13 @@ namespace Introduction.Repository
                 connection.Close();
                 return dogs;
             }
-            catch (NpgsqlException )
-            {          
+            catch (NpgsqlException)
+            {
                 return null;
             }
         }
 
-        public async Task<bool> Update(Guid id)
+        public async Task<bool> UpdateSync(Guid id)
         {
             try
             {

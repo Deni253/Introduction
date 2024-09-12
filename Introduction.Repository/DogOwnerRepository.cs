@@ -2,6 +2,7 @@
 using Introduction.Model;
 using Introduction.Repository.Common;
 using Npgsql;
+using System.Net.NetworkInformation;
 using System.Text;
 
 namespace Introduction.Repository
@@ -10,17 +11,28 @@ namespace Introduction.Repository
     {
         private string connectionString = "Host=localhost;Port=5432;Database=postgres;Username=postgres;Password=postgres";
 
-        public async Task<bool> Delete(Guid id)
+        public async Task<bool> DeleteSync(Guid id,DogOwnerFilter filter)
         {
             try
             {
+                StringBuilder sb = new StringBuilder();
                 using var connection = new NpgsqlConnection(connectionString);
 
-                var commandText = "DELETE FROM \"Dog\"WHERE\"Id\"=@Id;";
+                var commandText = "DELETE FROM \"DogOwner\" WHERE 1=1";
+                sb.Append(commandText);
 
+                if (!string.IsNullOrEmpty(filter.FirstName))
+                {
+                    sb.Append(" AND \"FirstName\" ILIKE @FirstName"); // NAME I
+                }
+                commandText = sb.ToString();
                 using var command = new NpgsqlCommand(commandText, connection);
 
-                command.Parameters.AddWithValue("@id", id);
+                if (!string.IsNullOrEmpty(filter.FirstName))
+                {
+                    command.Parameters.AddWithValue("@FirstName", filter.FirstName);
+                }
+                
 
                 connection.Open();//ne staviti kao asinkrono jer onda nećemo bit sigurni jel ona otvorena prije nego ostalo krenemo radit a treba nam
 
@@ -40,7 +52,7 @@ namespace Introduction.Repository
             }
         }
 
-        public async Task<bool> Post(DogOwner dogOwner)
+        public async Task<bool> PostSync(DogOwner dogOwner)
         {
             try
             {
@@ -77,7 +89,7 @@ namespace Introduction.Repository
             }
         }
 
-        public async Task<DogOwner> Get(Guid id)
+        public async Task<DogOwner> GetSync(Guid id)
         {
             try
             {
@@ -112,7 +124,7 @@ namespace Introduction.Repository
             }
         }
 
-        public async Task<List<DogOwner>> GetAll(DogOwnerFilter ownerFilter)
+        public async Task<List<DogOwner>> GetAllSync(DogOwnerFilter ownerFilter,Sorting sorting,Paging paging)
         {
             try
             {
@@ -126,22 +138,42 @@ namespace Introduction.Repository
 
                 if (!string.IsNullOrEmpty(ownerFilter.FirstName))
                 {
-                    stringBuilder.Append(" AND \"FirstName\"=@firstName");
+                    stringBuilder.Append(" AND \"FirstName\" ILIKE @firstName");
                 }
 
                 if (!string.IsNullOrEmpty(ownerFilter.LastName))
                 {
-                    stringBuilder.Append(" AND \"LastName\"=@lastName");
+                    stringBuilder.Append(" AND \"LastName\" ILIKE @lastName");
                 }
 
                 if (!string.IsNullOrEmpty(ownerFilter.PhoneNumber))
                 {
-                    stringBuilder.Append(" AND \"PhoneNumber\"=@phoneNumber");
+                    stringBuilder.Append(" AND \"PhoneNumber\" ILIKE @phoneNumber");
                 }
 
                 if (!string.IsNullOrEmpty(ownerFilter.Email))
                 {
-                    stringBuilder.Append(" AND \"Email\"=@email");
+                    stringBuilder.Append(" AND \"Email\" ILIKE @email");
+                }
+                if (!string.IsNullOrEmpty(sorting.OrderBy))
+                {
+                    stringBuilder.Append(" ORDER BY ");
+                    stringBuilder.Append($"\"{sorting.OrderBy}\"");
+
+                    if (!string.IsNullOrEmpty(sorting.SortDirection) &&
+                        (string.Equals(sorting.SortDirection, "asc", StringComparison.OrdinalIgnoreCase) ||
+                         string.Equals(sorting.SortDirection, "desc", StringComparison.OrdinalIgnoreCase)))
+                    {
+                        stringBuilder.Append($" {sorting.SortDirection.ToUpper()} ");
+                    }
+                    else
+                    {
+                        stringBuilder.Append(" ASC ");
+                    }
+                }
+                if (paging.PageSize > 0)
+                {
+                    stringBuilder.Append("LIMIT @ItemsPerPage OFFSET @Offset ");
                 }
 
                 //var commandText = "SELECT * FROM \"Dog\" FULL OUTER JOIN \"DogOwner\"ON\"Dog.DogOwnerID\"=DogOwner.Id;";
@@ -154,6 +186,11 @@ namespace Introduction.Repository
                 command.Parameters.AddWithValue("@lastName", $"{ownerFilter.LastName}");
                 command.Parameters.AddWithValue("@phoneNumber", $"{ownerFilter.PhoneNumber}");
                 command.Parameters.AddWithValue("@email", $"{ownerFilter.Email}");
+                if (paging.PageSize > 0)
+                {
+                    command.Parameters.AddWithValue("@ItemsPerPage", paging.PageSize);
+                    command.Parameters.AddWithValue("@Offset", (paging.PageNumber - 1) * paging.PageSize);
+                }
 
                 //command.Parameters.AddWithValue("@id", id);
                 connection.Open();
@@ -184,7 +221,7 @@ namespace Introduction.Repository
             }
         }
 
-        public async Task<bool> Update(Guid id, DogOwner dogOwner)
+        public async Task<bool> UpdateSync(Guid id, DogOwner dogOwner)
         {
             try
             {

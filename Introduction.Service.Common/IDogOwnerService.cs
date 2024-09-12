@@ -5,15 +5,15 @@ namespace Introduction.Service.Common
 {
     public interface IDogOwnerService
     {
-        Task<bool> DeleteDogOwner(Guid id);
+        Task<bool> DeleteDogOwnerSync(Guid id, DogOwnerFilter ownerFilter);
 
-        Task<bool> PostDogOwner(DogOwner owner);
+        Task<bool> PostDogOwnerSync(DogOwner owner);
 
-        Task<DogOwner> GetDogOwner(Guid id);
+        Task<DogOwner> GetDogOwnerSync(Guid id);
 
         //Task<List<DogOwner>> GetAll();
-        Task<List<DogOwner>> GetAll(DogOwnerFilter ownerFilter);
+        Task<List<DogOwner>> GetAllSync(DogOwnerFilter ownerFilter,Sorting sorting, Paging paging);
 
-        Task<bool> UpdateDogOwner(Guid id, DogOwner dog);
+        Task<bool> UpdateDogOwnerSync(Guid id, DogOwner dog);
     }
 }

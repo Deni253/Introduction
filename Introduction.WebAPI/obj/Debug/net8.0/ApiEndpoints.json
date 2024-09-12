@@ -1,7 +1,7 @@
 [
   {
     "ContainingType": "Introduction.Repository.Controllers.DogController",
-    "Method": "PostDog",
+    "Method": "PostDogSync",
     "RelativePath": "Dog/create",
     "HttpMethod": "POST",
     "IsController": true,
@@ -17,8 +17,8 @@
   },
   {
     "ContainingType": "Introduction.Repository.Controllers.DogController",
-    "Method": "DeleteDog",
-    "RelativePath": "Dog/del/{id}",
+    "Method": "DeleteDogSync",
+    "RelativePath": "Dog/del",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -26,14 +26,14 @@
       {
         "Name": "id",
         "Type": "System.Guid",
-        "IsRequired": true
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
   },
   {
     "ContainingType": "Introduction.Repository.Controllers.DogController",
-    "Method": "GetDog",
+    "Method": "GetDogSync",
     "RelativePath": "Dog/get/{id}",
     "HttpMethod": "GET",
     "IsController": true,
@@ -49,7 +49,7 @@
   },
   {
     "ContainingType": "Introduction.Repository.Controllers.DogController",
-    "Method": "GetAll",
+    "Method": "GetAllSync",
     "RelativePath": "Dog/getall",
     "HttpMethod": "GET",
     "IsController": true,
@@ -79,13 +79,33 @@
         "Name": "breed",
         "Type": "System.String",
         "IsRequired": false
+      },
+      {
+        "Name": "orderby",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "sortDirection",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
   },
   {
     "ContainingType": "Introduction.Repository.Controllers.DogController",
-    "Method": "UpdateDog",
+    "Method": "UpdateDogSync",
     "RelativePath": "Dog/update/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
@@ -101,7 +121,7 @@
   },
   {
     "ContainingType": "Introduction.Repository.Controllers.DogOwnerController",
-    "Method": "PostDogOwner",
+    "Method": "PostDogOwnerSync",
     "RelativePath": "DogOwner/create",
     "HttpMethod": "POST",
     "IsController": true,
@@ -117,7 +137,7 @@
   },
   {
     "ContainingType": "Introduction.Repository.Controllers.DogOwnerController",
-    "Method": "DeleteDogOwner",
+    "Method": "DeleteDogOwnerSync",
     "RelativePath": "DogOwner/del",
     "HttpMethod": "DELETE",
     "IsController": true,
@@ -127,13 +147,18 @@
         "Name": "id",
         "Type": "System.Guid",
         "IsRequired": false
+      },
+      {
+        "Name": "firstName",
+        "Type": "System.String",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
   },
   {
     "ContainingType": "Introduction.Repository.Controllers.DogOwnerController",
-    "Method": "GetDogOwner",
+    "Method": "GetDogOwnerSync",
     "RelativePath": "DogOwner/get/{id}",
     "HttpMethod": "GET",
     "IsController": true,
@@ -149,7 +174,7 @@
   },
   {
     "ContainingType": "Introduction.Repository.Controllers.DogOwnerController",
-    "Method": "GetAll",
+    "Method": "GetAllSync",
     "RelativePath": "DogOwner/getall",
     "HttpMethod": "GET",
     "IsController": true,
@@ -179,13 +204,33 @@
         "Name": "Email",
         "Type": "System.String",
         "IsRequired": false
+      },
+      {
+        "Name": "orderBy",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "sortDirection",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
   },
   {
     "ContainingType": "Introduction.Repository.Controllers.DogOwnerController",
-    "Method": "UpdateDogOwner",
+    "Method": "UpdateDogOwnerSync",
     "RelativePath": "DogOwner/update/{id}",
     "HttpMethod": "PUT",
     "IsController": true,

@@ -5,14 +5,14 @@ namespace Introduction.Repository.Common
 {
     public interface IDogRepository
     {
-        Task<bool> Post(Dog dog);
+        Task<bool> PostSync(Dog dog);
 
-        Task<bool> Delete(Guid id);
+        Task<bool> DeleteSync(Guid id);
 
-        Task<bool> Update(Guid id);
+        Task<bool> UpdateSync(Guid id);
 
-        Task<Dog> Get(Guid id);
+        Task<Dog> GetSync(Guid id);
 
-        Task<List<Dog>> GetAll(DogFilter filter, Sorting sorting);
+        Task<List<Dog>> GetAllSync(DogFilter filter, Sorting sorting, Paging paging);
     }
 }

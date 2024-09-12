@@ -1,6 +1,7 @@
 ﻿using Introduction.Common;
 using Introduction.Model;
 using Introduction.Service.Common;
+using Introduction.WebAPI.RestModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Introduction.Repository.Controllers
@@ -18,9 +19,9 @@ namespace Introduction.Repository.Controllers
 
         [HttpPost]
         [Route("create")]
-        public async Task<IActionResult> PostDog(Dog dog)
+        public async Task<IActionResult> PostDogSync(Dog dog)
         {
-            var isSuccessful = await _service.PostDog(dog);
+            var isSuccessful = await _service.PostDogSync(dog);
             if (isSuccessful == false)
             {
                 return BadRequest();
@@ -32,10 +33,11 @@ namespace Introduction.Repository.Controllers
         }
 
         [HttpDelete]
-        [Route("del/{id}")]
-        public async Task<IActionResult> DeleteDog(Guid id)
+        //[Route("del/{id}")]
+        [Route("del")]
+        public async Task<IActionResult> DeleteDogSync(Guid id)
         {
-            var isSuccessful = await _service.DeleteDog(id);
+            var isSuccessful = await _service.DeleteDogSync(id);
             if (isSuccessful == false)
             {
                 return BadRequest();
@@ -48,32 +50,49 @@ namespace Introduction.Repository.Controllers
 
         [HttpGet]
         [Route("get/{id}")]
-        public async Task<IActionResult> GetDog(Guid id)
+        public async Task<IActionResult> GetDogSync(Guid id)
         {
-            var isSuccessful = await _service.GetDog(id);//isSuccessful je ovdje objekt za razliku od ovih ostalih gdje je bool
-            if (isSuccessful == null)
+            var dog = await _service.GetDogSync(id);
+            
+            if (dog == null)
             {
-                return BadRequest();
+                return BadRequest();  
             }
-            else
+            
+            var dogRest = new DogRest
             {
-                return Ok(isSuccessful);
-            }
+                Id = dog.Id,
+                Name = dog.Name,
+                Age = dog.Age,
+                Breed = dog.Breed,
+                IsTrained = dog.IsTrained
+            };
+          
+            return Ok(dogRest);
         }
 
         [HttpGet]
         [Route("getall")]
-        public async Task<IActionResult> GetAll(Guid id, string? Name, bool? isTrained, int age, string? breed)
+        public async Task<IActionResult> GetAllSync(Guid id, string? Name, bool? isTrained, int age, string? breed,string orderby="Name",string sortDirection="ASC",int pageSize=6,int pageNumber= 1)
         {
             DogFilter filter = new DogFilter();
             Sorting sorting = new Sorting();
+            Paging paging = new Paging();
+
             filter.Id = id;
             filter.Name = Name;
             filter.IsTrained = isTrained;
             filter.Age = age;
             filter.Breed = breed;
 
-            var isSuccessful = await _service.GetAll(filter,sorting);
+
+            sorting.OrderBy = orderby;
+            sorting.SortDirection = sortDirection;
+
+            paging.PageNumber= pageNumber;
+            paging.PageSize = pageSize;
+
+            var isSuccessful = await _service.GetAllSync(filter,sorting,paging);
             if (isSuccessful == null)
             {
                 return BadRequest();
@@ -86,9 +105,9 @@ namespace Introduction.Repository.Controllers
 
         [HttpPut]
         [Route("update/{id}")]
-        public async Task<IActionResult> UpdateDog(Guid id)
+        public async Task<IActionResult> UpdateDogSync(Guid id)
         {
-            var isSuccessful = await _service.UpdateDog(id);
+            var isSuccessful = await _service.UpdateDogSync(id);
             if (isSuccessful == false)
             {
                 return BadRequest();

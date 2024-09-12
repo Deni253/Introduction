@@ -14,29 +14,29 @@ namespace Introduction.Service
             _repository = repository;
         }
 
-        public async Task<bool> PostDog(Dog dog)
+        public async Task<bool> PostDogSync(Dog dog)
         {
-            return await _repository.Post(dog);
+            return await _repository.PostSync(dog);
         }
 
-        public async Task<bool> DeleteDog(Guid id)
+        public async Task<bool> DeleteDogSync(Guid id)
         {
-            return await _repository.Delete(id);
+            return await _repository.DeleteSync(id);
         }
 
-        public async Task<Dog> GetDog(Guid id)
+        public async Task<Dog> GetDogSync(Guid id)
         {
-            return await _repository.Get(id);
+            return await _repository.GetSync(id);
         }
 
-        public async Task<List<Dog>> GetAll(DogFilter filter,Sorting sorting)
+        public async Task<List<Dog>> GetAllSync(DogFilter filter,Sorting sorting,Paging paging)
         {
-            return await _repository.GetAll(filter,sorting);
+            return await _repository.GetAllSync(filter,sorting,paging);
         }
 
-        public async Task<bool> UpdateDog(Guid id)
+        public async Task<bool> UpdateDogSync(Guid id)
         {
-            return await _repository.Update(id);
+            return await _repository.UpdateSync(id);
         }
     }
 }
