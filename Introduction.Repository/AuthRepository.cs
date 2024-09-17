@@ -13,36 +13,103 @@ namespace Introduction.Repository
     {
         private string connectionString = "Host=localhost;Port=5432;Database=Users;Username=postgres;Password=postgres";
 
-        public async Task<bool> LoginUser(Login login)
+        //public async Task<bool> LoginUser(Login login)
+        //{
+        //    try
+        //    {
+        //        using var connection = new NpgsqlConnection(connectionString);
+
+        //        var commandText = "SELECT COUNT(*) FROM \"User\" WHERE \"Username\"=@username AND \"Password\"=@password";
+
+        //        TokenRequest token = new TokenRequest();
+        //        using var command = new NpgsqlCommand(commandText, connection);
+        //        command.Parameters.AddWithValue("@username", login.Username);
+        //        command.Parameters.AddWithValue("@password", login.Password);
+
+        //        await connection.OpenAsync();
+
+        //                                                                 // dohvaćamo broj usera s tim username-om može i sa executeReaderom ako moramo izvuć dodatne info
+        //        using var reader = await command.ExecuteReaderAsync();
+        //        if (await reader.ReadAsync())
+        //        {
+        //            // Create and populate the User object
+        //            var user = new User
+        //            {
+        //                Username = reader.GetString(reader.GetOrdinal("Username")),
+        //                Email = reader.GetString(reader.GetOrdinal("Email")),
+        //                Role = reader.GetString(reader.GetOrdinal("Role"))
+        //            };
+        //            return user;
+        //        }
+        //        else
+        //        {
+        //            return null; // No user found
+        //        }
+
+
+
+
+        //        if (count == 0)
+        //        {
+        //            return false;
+        //        }
+        //        else
+        //        {
+        //            return true;
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Console.WriteLine($"Error: {ex.Message}");
+        //        return false;
+        //    }
+        //}
+
+        public async Task<User?> LoginUser(Login login)
         {
             try
             {
                 using var connection = new NpgsqlConnection(connectionString);
 
-                var commandText = "SELECT COUNT(*) FROM \"User\" WHERE \"Username\"=@username AND \"Password\"=@password";
+                
+                var commandText = "SELECT \"Username\", \"Email\", \"Role\" FROM \"User\" WHERE \"Username\" = @username AND \"Password\" = @password";
 
-                TokenRequest token = new TokenRequest();
                 using var command = new NpgsqlCommand(commandText, connection);
                 command.Parameters.AddWithValue("@username", login.Username);
                 command.Parameters.AddWithValue("@password", login.Password);
 
                 await connection.OpenAsync();
 
-                var count = (long)await command.ExecuteScalarAsync(); // dohvaćamo broj usera s tim username-om može i sa executeReaderom ako moramo izvuć dodatne info
+                
+                using var reader = await command.ExecuteReaderAsync();
 
-                if (count == 0)
+                if (await reader.ReadAsync())
                 {
-                    return false;
+                    
+                    var user = new User
+                    {
+                        Id = reader.GetGuid(reader.GetOrdinal("Id")),
+                        RoleId = reader.GetGuid(reader.GetOrdinal("RoleId")),
+                        Username = reader.GetString(reader.GetOrdinal("Username")),
+                        Password = reader.GetString(reader.GetOrdinal("Password")),
+                        FirstName = reader.GetString(reader.GetOrdinal("FirstName")),
+                        LastName = reader.GetString(reader.GetOrdinal("LastName")),
+                        PhoneNumber = reader.GetString(reader.GetOrdinal("PhoneNumber")),
+                        DateCreated = reader.GetDateTime(reader.GetOrdinal("DateCreated")),
+                        DateUpdated = reader.IsDBNull(reader.GetOrdinal("DateUpdated")) ? (DateTime?)null : reader.GetDateTime(reader.GetOrdinal("DateUpdated")),
+                        Email = reader.GetString(reader.GetOrdinal("Email")),
+                    };
+                    return user;
                 }
                 else
                 {
-                    return true;
+                    return null; 
                 }
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"Error: {ex.Message}");
-                return false;
+                return null; // Or handle the error as needed
             }
         }
 

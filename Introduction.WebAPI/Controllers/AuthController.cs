@@ -9,6 +9,7 @@ using System.Text;
 using Microsoft.AspNetCore.Authorization;
 using System.Data;
 using StackExchange.Redis;
+using Introduction.Service;
 
 namespace Introduction.WebAPI.Controllers
 {
@@ -23,17 +24,30 @@ namespace Introduction.WebAPI.Controllers
             _config = config;
         }
 
-        [HttpPost]
-        [Route("login")]
-        public async Task<IActionResult> Login([FromBody]Login login) 
-        {
-            var isSuccessful = await _service.LoginUser(login);
+        //[HttpPost]
+        //[Route("login")]
+        //public async Task<IActionResult> Login([FromBody]Login login) 
+        //{
+        //    var isSuccessful = await _service.LoginUser(login);
 
-            if (string.IsNullOrWhiteSpace(login.Username) || string.IsNullOrWhiteSpace(login.Password) || isSuccessful==false)
+        //    if (string.IsNullOrWhiteSpace(login.Username) || string.IsNullOrWhiteSpace(login.Password) || isSuccessful==null)
+        //    {
+        //        return BadRequest();
+        //    }
+        //    return Ok(CreateToken(login.token));
+        //}
+
+        public async Task<IActionResult> Login([FromBody] TokenRequest request)
+        {
+            try
             {
-                return BadRequest();
+                var token = await _service.CreateToken(request);
+                return Ok(new { Token = token });
             }
-            return Ok(CreateToken(login.token));
+            catch (ArgumentException ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpPost]
@@ -64,6 +78,17 @@ namespace Introduction.WebAPI.Controllers
 
         public async Task<IActionResult> Update(Guid id,[FromBody] User user)
         {
+            //var currentUserId = GetCurrentUserId();  
+            //var currentUser = await _userService.GetUserById(currentUserId);
+
+            
+            //bool isAdmin = currentUser.UserRoles.Any(ur => ur.Role.Name == "Admin");
+
+            //if (!isAdmin)
+            //{
+            //    return Forbid();  
+            //}
+
             var isSuccessful = await _service.UpdateUser(id,user);
 
             if (isSuccessful == false)
@@ -71,53 +96,6 @@ namespace Introduction.WebAPI.Controllers
                 return BadRequest();
             }
             return Ok();
-        }
-
-
-        [HttpPost("token")]
-        public IActionResult CreateToken([FromBody] TokenRequest request)
-        {
-            {
-                if (request == null || string.IsNullOrWhiteSpace(request.Username))
-                {
-                    return BadRequest("Username is required.");
-                }
-                var username = request.Username;
-
-                // Ovo povlači konfiguraciju iz appsettings.json.
-                var issuer = _config["JwtSettings:Issuer"];
-                var audience = _config["JwtSettings:Audience"];
-                var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["JwtSettings:Key"]));
-
-                //Ovo nam je u biti payload za token. Tu možemo staviti podatke o korisniku
-                var claims = new List<Claim>
-        {
-            //new Claim(JwtRegisteredClaimNames.Sub, UserId), 
-            new Claim(JwtRegisteredClaimNames.Name, username), // User Name
-            new Claim(ClaimTypes.Role, "Admin"),
-            new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-        };
-
-                // Create signing credentials-
-                var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256); //Hash-based Message Authentication Code-HMAC
-
-                // postavljamo claims u Subject i trajanje tokena
-                var tokenDescriptor = new SecurityTokenDescriptor
-                {
-                    Subject = new ClaimsIdentity(claims),
-                    Expires = DateTime.UtcNow.AddSeconds(60), // dodajemo kolko vrijedi
-                    Issuer = issuer,
-                    Audience = audience,
-                    SigningCredentials = creds
-                };
-
-                // Ovo nam je  token hendler
-                var tokenHandler = new JwtSecurityTokenHandler();
-                var token = tokenHandler.CreateToken(tokenDescriptor);
-
-                // Vrati serijalizirani token
-                return Ok(new { Token = tokenHandler.WriteToken(token) });
-            }
         }
     }
 }

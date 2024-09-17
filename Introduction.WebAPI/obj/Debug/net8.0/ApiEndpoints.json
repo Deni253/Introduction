@@ -251,22 +251,6 @@
   },
   {
     "ContainingType": "Introduction.WebAPI.Controllers.AuthController",
-    "Method": "Login",
-    "RelativePath": "login",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "login",
-        "Type": "Introduction.Model.Login",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Introduction.WebAPI.Controllers.AuthController",
     "Method": "Register",
     "RelativePath": "register",
     "HttpMethod": "POST",
@@ -276,22 +260,6 @@
       {
         "Name": "user",
         "Type": "Introduction.Model.User",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Introduction.WebAPI.Controllers.AuthController",
-    "Method": "CreateToken",
-    "RelativePath": "token",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "request",
-        "Type": "Introduction.Model.TokenRequest",
         "IsRequired": true
       }
     ],

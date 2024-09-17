@@ -10,7 +10,8 @@ namespace Introduction.Service.Common
     public interface IAuthService
     {
         Task<bool> RegisterUser(User user);
-        Task<bool> LoginUser(Login login);
+        Task<User> LoginUser(Login login);
         Task<bool> UpdateUser(Guid id, User user);
+        Task<string> CreateToken(TokenRequest request);
     }
 }

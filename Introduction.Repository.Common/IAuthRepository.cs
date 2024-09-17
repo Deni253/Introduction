@@ -10,7 +10,7 @@ namespace Introduction.Repository.Common
     public interface IAuthRepository
     {
         Task<bool> RegisterUser(User user);
-        Task<bool> LoginUser(Login login);
+        Task<User> LoginUser(Login login);
         Task<bool> UpdateUser(Guid id, User user);
     }
 }
