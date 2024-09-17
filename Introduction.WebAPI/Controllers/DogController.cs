@@ -2,7 +2,9 @@
 using Introduction.Model;
 using Introduction.Service.Common;
 using Introduction.WebAPI.RestModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Introduction.WebAPI.Controllers;
 
 namespace Introduction.Repository.Controllers
 {
@@ -16,6 +18,7 @@ namespace Introduction.Repository.Controllers
         {
             _service = service;
         }
+
 
         [HttpPost]
         [Route("create")]
@@ -48,6 +51,7 @@ namespace Introduction.Repository.Controllers
             }
         }
 
+        
         [HttpGet]
         [Route("get/{id}")]
         public async Task<IActionResult> GetDogSync(Guid id)
@@ -71,9 +75,11 @@ namespace Introduction.Repository.Controllers
             return Ok(dogRest);
         }
 
+
+        
         [HttpGet]
         [Route("getall")]
-        public async Task<IActionResult> GetAllSync(Guid id, string? Name, bool? isTrained, int age, string? breed,string orderby="Name",string sortDirection="ASC",int pageSize=6,int pageNumber= 1)
+        public async Task<IActionResult> GetAllSync(Guid id, string? Name, bool? isTrained, int age, string? breed,string orderby="Name",string sortDirection="ASC",int pageSize=10,int pageNumber= 1)
         {
             DogFilter filter = new DogFilter();
             Sorting sorting = new Sorting();

@@ -92,3 +92,13 @@ C:\Users\cukar\Desktop\MULTILAYER\Introduction-main\Introduction.WebAPI\obj\Debu
 C:\Users\cukar\source\repos\Introduction\Introduction.WebAPI\bin\Debug\net8.0\Autofac.dll
 C:\Users\cukar\source\repos\Introduction\Introduction.WebAPI\bin\Debug\net8.0\Autofac.Extensions.DependencyInjection.dll
 C:\Users\cukar\source\repos\Introduction\Introduction.WebAPI\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\cukar\source\repos\Introduction\Introduction.WebAPI\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\cukar\source\repos\Introduction\Introduction.WebAPI\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\cukar\source\repos\Introduction\Introduction.WebAPI\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\cukar\source\repos\Introduction\Introduction.WebAPI\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\cukar\source\repos\Introduction\Introduction.WebAPI\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\cukar\source\repos\Introduction\Introduction.WebAPI\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\cukar\source\repos\Introduction\Introduction.WebAPI\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\cukar\source\repos\Introduction\Introduction.WebAPI\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\cukar\source\repos\Introduction\Introduction.WebAPI\bin\Debug\net8.0\Pipelines.Sockets.Unofficial.dll
+C:\Users\cukar\source\repos\Introduction\Introduction.WebAPI\bin\Debug\net8.0\StackExchange.Redis.dll

@@ -171,10 +171,10 @@ namespace Introduction.Repository
                         stringBuilder.Append(" ASC ");
                     }
                 }
-                if (paging.PageSize > 0)
-                {
-                    stringBuilder.Append("LIMIT @ItemsPerPage OFFSET @Offset ");
-                }
+                //if (paging.PageSize > 0)
+                //{
+                //    stringBuilder.Append("LIMIT @ItemsPerPage OFFSET @Offset ");
+                //}
 
                 //var commandText = "SELECT * FROM \"Dog\" FULL OUTER JOIN \"DogOwner\"ON\"Dog.DogOwnerID\"=DogOwner.Id;";
 
@@ -186,11 +186,12 @@ namespace Introduction.Repository
                 command.Parameters.AddWithValue("@lastName", $"{ownerFilter.LastName}");
                 command.Parameters.AddWithValue("@phoneNumber", $"{ownerFilter.PhoneNumber}");
                 command.Parameters.AddWithValue("@email", $"{ownerFilter.Email}");
-                if (paging.PageSize > 0)
-                {
-                    command.Parameters.AddWithValue("@ItemsPerPage", paging.PageSize);
-                    command.Parameters.AddWithValue("@Offset", (paging.PageNumber - 1) * paging.PageSize);
-                }
+
+                //if (paging.PageSize > 0)
+                //{
+                //    command.Parameters.AddWithValue("@ItemsPerPage", paging.PageSize);
+                //    command.Parameters.AddWithValue("@Offset", (paging.PageNumber - 1) * paging.PageSize);
+                //}
 
                 //command.Parameters.AddWithValue("@id", id);
                 connection.Open();

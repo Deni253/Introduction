@@ -1,6 +1,8 @@
 ﻿using Introduction.Common;
 using Introduction.Model;
 using Introduction.Service.Common;
+using Introduction.WebAPI.Identity;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel;
 
@@ -11,10 +13,12 @@ namespace Introduction.Repository.Controllers
     public class DogOwnerController : ControllerBase
     {
         private IDogOwnerService _service;
+        private readonly IConfiguration _config;
 
-        public DogOwnerController(IDogOwnerService service)
+        public DogOwnerController(IDogOwnerService service, IConfiguration config)
         {
             _service = service;
+            _config = config;
         }
 
         [HttpPost]
@@ -65,6 +69,7 @@ namespace Introduction.Repository.Controllers
             }
         }
 
+        [Authorize]
         [HttpGet]
         [Route("getall")]
         public async Task<IActionResult> GetAllSync(Guid? Id, string? firstName, string? lastName, string? phoneNumber, string? Email,string orderBy="",string sortDirection="", int pageNumber=6,int pageSize=1)
@@ -94,7 +99,7 @@ namespace Introduction.Repository.Controllers
                 return Ok(dogs);
             }
         }
-
+        [Authorize(Policy = IdentityData.AdminUserPolicyName)]
         [HttpPut]
         [Route("update/{id}")]
         public async Task<IActionResult> UpdateDogOwnerSync(Guid id, DogOwner dogOwner)
