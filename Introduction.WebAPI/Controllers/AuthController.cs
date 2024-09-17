@@ -26,7 +26,7 @@ namespace Introduction.WebAPI.Controllers
 
         //[HttpPost]
         //[Route("login")]
-        //public async Task<IActionResult> Login([FromBody]Login login) 
+        //public async Task<IActionResult> Login([FromBody]Login login)
         //{
         //    var isSuccessful = await _service.LoginUser(login);
 
@@ -37,16 +37,29 @@ namespace Introduction.WebAPI.Controllers
         //    return Ok(CreateToken(login.token));
         //}
 
-        public async Task<IActionResult> Login([FromBody] TokenRequest request)
+        [HttpPost]
+        [Route("login")]
+        public async Task<IActionResult> Login(Login login)
         {
             try
             {
-                var token = await _service.CreateToken(request);
+                var user = await _service.LoginUser(login);
+                if (user == null)
+                {
+                    return Unauthorized("Invalid email or password.");
+                } 
+
+                var tokenRequest = new TokenRequest
+                {
+                    UserID = user.Id.ToString(), // Ensure this matches the expected type
+                    Email = user.Email
+                };
+                var token = await _service.CreateToken(tokenRequest);
                 return Ok(new { Token = token });
             }
-            catch (ArgumentException ex)
+            catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return BadRequest();
             }
         }
 
@@ -71,25 +84,22 @@ namespace Introduction.WebAPI.Controllers
             return Ok(user);
         }
 
-
         //[Authorize("Admin")] // Našem programu nije bitno koji token dobije on će autorizirati svj čak i ako otkomentiram ovu liniju. Kako da mi s obzirom da imamo Role klasu omogućimo ovo samo Adminu a ne i Useru jer ako ćemo raditi to preko Role klase u kodu nama uopće ne treba ovaj authorize admin
         [HttpPut]
         [Route("update/{id}")]
-
-        public async Task<IActionResult> Update(Guid id,[FromBody] User user)
+        public async Task<IActionResult> Update(Guid id, [FromBody] User user)
         {
-            //var currentUserId = GetCurrentUserId();  
+            //var currentUserId = GetCurrentUserId();
             //var currentUser = await _userService.GetUserById(currentUserId);
 
-            
             //bool isAdmin = currentUser.UserRoles.Any(ur => ur.Role.Name == "Admin");
 
             //if (!isAdmin)
             //{
-            //    return Forbid();  
+            //    return Forbid();
             //}
 
-            var isSuccessful = await _service.UpdateUser(id,user);
+            var isSuccessful = await _service.UpdateUser(id, user);
 
             if (isSuccessful == false)
             {

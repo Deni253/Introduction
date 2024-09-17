@@ -40,12 +40,11 @@ namespace Introduction.Service
 
         public async Task<string> CreateToken(TokenRequest request)
         {
-            if (request == null || string.IsNullOrWhiteSpace(request.Username))
+            if (request == null || string.IsNullOrWhiteSpace(request.Email))
             {
-                throw new ArgumentException("Username is required.");
+                throw new ArgumentException("Email is required.");
             }
 
-            var username = request.Username;
             var id = request.UserID;
             var email = request.Email;
 
@@ -58,7 +57,6 @@ namespace Introduction.Service
             var claims = new List<Claim>
             {
                 new Claim(JwtRegisteredClaimNames.Sub, id),
-                new Claim(JwtRegisteredClaimNames.Name, username),
                 new Claim(JwtRegisteredClaimNames.Email, email),
                 new Claim(ClaimTypes.Role, "Admin"),
             };
