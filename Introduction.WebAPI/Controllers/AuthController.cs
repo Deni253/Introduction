@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Authorization;
 using System.Data;
 using StackExchange.Redis;
 using Introduction.Service;
+using Microsoft.AspNetCore.Identity.Data;
 
 namespace Introduction.WebAPI.Controllers
 {
@@ -24,44 +25,20 @@ namespace Introduction.WebAPI.Controllers
             _config = config;
         }
 
-        //[HttpPost]
-        //[Route("login")]
-        //public async Task<IActionResult> Login([FromBody]Login login)
-        //{
-        //    var isSuccessful = await _service.LoginUser(login);
-
-        //    if (string.IsNullOrWhiteSpace(login.Username) || string.IsNullOrWhiteSpace(login.Password) || isSuccessful==null)
-        //    {
-        //        return BadRequest();
-        //    }
-        //    return Ok(CreateToken(login.token));
-        //}
-
         [HttpPost]
         [Route("login")]
-        public async Task<IActionResult> Login(Login login)
+        public async Task<IActionResult> Login(Login request)
         {
-            try
-            {
-                var user = await _service.LoginUser(login);
-                if (user == null)
-                {
-                    return Unauthorized("Invalid email or password.");
-                } 
+            var token = await _service.LoginUser(request.Username, request.Password);
 
-                var tokenRequest = new TokenRequest
-                {
-                    UserID = user.Id.ToString(), // Ensure this matches the expected type
-                    Email = user.Email
-                };
-                var token = await _service.CreateToken(tokenRequest);
-                return Ok(new { Token = token });
-            }
-            catch (Exception ex)
+            if (token == null)
             {
-                return BadRequest();
+                return Unauthorized();
             }
+
+            return Ok(new { Token = token });
         }
+
 
         [HttpPost]
         [Route("register")]
@@ -73,13 +50,6 @@ namespace Introduction.WebAPI.Controllers
             {
                 return BadRequest();
             }
-
-            //var registerRest = new RegisterRest
-
-            //{
-            //    Email = user.Email,
-            //    Username = user.Username,
-            //};
 
             return Ok(user);
         }

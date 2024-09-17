@@ -20,6 +20,6 @@ namespace Introduction.Model
         public DateTime DateCreated { get; set; }
         public DateTime? DateUpdated { get; set; }
         public string Email { get; set; }
-        public Role? role { get; set; }
+        public Role? Role { get; set; }
     }
 }

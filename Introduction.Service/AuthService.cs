@@ -28,59 +28,53 @@ namespace Introduction.Service
             return _repository.RegisterUser(user);
         }
 
-        public Task<User> LoginUser(Login login)
-        {
-            return _repository.LoginUser(login);
-        }
-
         public Task<bool> UpdateUser(Guid id,User user)
         {
             return _repository.UpdateUser(id, user);
         }
 
-        public async Task<string> CreateToken(TokenRequest request)
+        public async Task<string> LoginUser(string username, string password)
         {
-            if (request == null || string.IsNullOrWhiteSpace(request.Email))
+            
+            var user = await _repository.GetUserByUsernameAndPassword(username, password);
+            if (user == null)
             {
-                throw new ArgumentException("Email is required.");
+                return null; 
             }
+            
+            return CreateToken(user);
+        }
 
-            var id = request.UserID;
-            var email = request.Email;
 
-            // Retrieve configuration settings
+        public string CreateToken(User user)
+        {
             var issuer = _config["JwtSettings:Issuer"];
             var audience = _config["JwtSettings:Audience"];
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["JwtSettings:Key"]));
 
-            // Define claims
             var claims = new List<Claim>
-            {
-                new Claim(JwtRegisteredClaimNames.Sub, id),
-                new Claim(JwtRegisteredClaimNames.Email, email),
-                new Claim(ClaimTypes.Role, "Admin"),
-            };
+    {
+        new Claim(JwtRegisteredClaimNames.Sub, user.Id.ToString()),
+        new Claim(JwtRegisteredClaimNames.Name, user.Username), 
+        new Claim(JwtRegisteredClaimNames.Email, user.Email), 
+        new Claim(ClaimTypes.Role, user.Role.Name)
+    };
 
-            // Create signing credentials
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
-            // Define token descriptor
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(claims),
-                Expires = DateTime.UtcNow.AddSeconds(60),
+                Expires = DateTime.UtcNow.AddHours(1),
                 Issuer = issuer,
                 Audience = audience,
                 SigningCredentials = creds
             };
 
-            // Create token handler and generate token
             var tokenHandler = new JwtSecurityTokenHandler();
             var token = tokenHandler.CreateToken(tokenDescriptor);
 
-            // Return serialized token
             return tokenHandler.WriteToken(token);
         }
-
     }
 }

@@ -13,100 +13,7 @@ namespace Introduction.Repository
     {
         private string connectionString = "Host=localhost;Port=5432;Database=Users;Username=postgres;Password=postgres";
 
-        //public async Task<bool> LoginUser(Login login)
-        //{
-        //    try
-        //    {
-        //        using var connection = new NpgsqlConnection(connectionString);
-
-        //        var commandText = "SELECT COUNT(*) FROM \"User\" WHERE \"Username\"=@username AND \"Password\"=@password";
-
-        //        TokenRequest token = new TokenRequest();
-        //        using var command = new NpgsqlCommand(commandText, connection);
-        //        command.Parameters.AddWithValue("@username", login.Username);
-        //        command.Parameters.AddWithValue("@password", login.Password);
-
-        //        await connection.OpenAsync();
-
-        //                                                                 // dohvaćamo broj usera s tim username-om može i sa executeReaderom ako moramo izvuć dodatne info
-        //        using var reader = await command.ExecuteReaderAsync();
-        //        if (await reader.ReadAsync())
-        //        {
-        //            // Create and populate the User object
-        //            var user = new User
-        //            {
-        //                Username = reader.GetString(reader.GetOrdinal("Username")),
-        //                Email = reader.GetString(reader.GetOrdinal("Email")),
-        //                Role = reader.GetString(reader.GetOrdinal("Role"))
-        //            };
-        //            return user;
-        //        }
-        //        else
-        //        {
-        //            return null; // No user found
-        //        }
-
-
-
-
-        //        if (count == 0)
-        //        {
-        //            return false;
-        //        }
-        //        else
-        //        {
-        //            return true;
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Console.WriteLine($"Error: {ex.Message}");
-        //        return false;
-        //    }
-        //}
-
-        public async Task<User> LoginUser(Login login)
-        {
-            try
-            {
-                using var connection = new NpgsqlConnection(connectionString);
-
-                
-                var commandText = "SELECT \"Username\", \"Email\", \"Role\" FROM \"User\" WHERE \"Email\" = @email AND \"Password\" = @password";
-
-                using var command = new NpgsqlCommand(commandText, connection);
-                command.Parameters.AddWithValue("@email", login.Email);
-                command.Parameters.AddWithValue("@password", login.Password);
-
-                await connection.OpenAsync();
-
-                
-                using var reader = await command.ExecuteReaderAsync();
-
-                if (await reader.ReadAsync())
-                {
-                    
-                    var user = new User
-                    {
-                        Id = reader.GetGuid(reader.GetOrdinal("Id")),
-                        RoleId = reader.GetGuid(reader.GetOrdinal("RoleId")),
-                        Username = reader.GetString(reader.GetOrdinal("Username")),
-                        Password = reader.GetString(reader.GetOrdinal("Password")),
-                        Email = reader.GetString(reader.GetOrdinal("Email")),
-                    };
-                    return user;
-                }
-                else
-                {
-                    return null; 
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error: {ex.Message}");
-                return null; // Or handle the error as needed
-            }
-        }
+       
 
 
         public async Task<bool> RegisterUser(User user)
@@ -139,7 +46,14 @@ namespace Introduction.Repository
 
                 var numberOfCommits = await command.ExecuteNonQueryAsync();
 
-                return numberOfCommits > 0;
+                if (numberOfCommits > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
             catch (PostgresException ex)
             {
@@ -152,6 +66,55 @@ namespace Introduction.Repository
                 return false;
             }
         }
+
+
+        public async Task<User> GetUserByUsernameAndPassword(string username, string password)
+        {
+            try
+            {
+                using var connection = new NpgsqlConnection(connectionString);
+                var commandText = "SELECT u.*, r.\"Name\" AS \"RoleName\" " +
+                    "FROM \"User\" u " +
+                    "JOIN \"Role\" r ON u.\"RoleId\" = r.\"Id\" " +
+                    "WHERE u.\"Username\" = @username AND u.\"Password\" = @password";
+
+                using var command = new NpgsqlCommand(commandText, connection);
+                command.Parameters.AddWithValue("@username", username);
+                command.Parameters.AddWithValue("@password", password);
+
+                await connection.OpenAsync();
+                using var reader = await command.ExecuteReaderAsync();
+
+                if (reader.HasRows)
+                {
+                    await reader.ReadAsync();
+                    var user = new User
+                    {
+                        Id = Guid.Parse(reader["Id"].ToString()),
+                        Username = reader["Username"].ToString(),
+                        Email = reader["Email"].ToString(),
+                        Password = reader["Password"].ToString(),
+                        Role = new Role
+                        {
+                            Name = reader["RoleName"].ToString() //  mapiranje
+                        }
+                    };
+                    return user;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+                return null;
+            }
+        }
+
+
+
         public async Task<bool> CheckIfUserExists(string username, string email)
         {
             try
